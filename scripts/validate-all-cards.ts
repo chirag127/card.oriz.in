@@ -1,7 +1,5 @@
-// Validate all card data files against Zod schema
 import { CardDataSchema } from "../src/data/schema";
 import { ALL_CARDS } from "../src/data/index";
-
 
 interface ValidationError {
   cardId: string;
