@@ -21,7 +21,11 @@ import { auVettaCreditCard } from "./cards/credit/au/au-bank-vetta-credit-card";
 import { auBusinessCreditCard } from "./cards/credit/au/au-business-credit-card";
 import { auCorporateCreditCard } from "./cards/credit/au/au-corporate-credit-card";
 import { auLitCreditCard } from "./cards/credit/au/au-lit-credit-card";
+import { au_mastercard_gold_credit_card } from "./cards/credit/au/au-mastercard-gold-credit-card";
 import { auPremiumCreditCard } from "./cards/credit/au/au-premium-credit-card";
+import { au_rupay_gold_credit_card } from "./cards/credit/au/au-rupay-gold-credit-card";
+import { au_rupay_platinum_credit_card } from "./cards/credit/au/au-rupay-platinum-credit-card";
+import { au_visa_world_credit_card } from "./cards/credit/au/au-visa-world-credit-card";
 import { auZenithCreditCard } from "./cards/credit/au/au-zenith-credit-card";
 import { axisAceCreditCard } from "./cards/credit/axis/axis-ace-credit-card";
 import { axisAirtelCreditCard } from "./cards/credit/axis/axis-airtel-credit-card";
@@ -57,7 +61,10 @@ import { axisSpicejetVoyageCreditCard } from "./cards/credit/axis/axis-spicejet-
 import { axisSupermoneyRupayCreditCard } from "./cards/credit/axis/axis-supermoney-rupay-credit-card";
 import { axisVistaraCreditCard } from "./cards/credit/axis/axis-vistara-credit-card";
 import { axisVistaraSignatureCreditCard } from "./cards/credit/axis/axis-vistara-signature-credit-card";
+import { bandhan_mastercard_platinum_credit_card } from "./cards/credit/bandhan/bandhan-mastercard-platinum-credit-card";
+import { bandhan_rupay_gold_credit_card } from "./cards/credit/bandhan/bandhan-rupay-gold-credit-card";
 import { bandhanRupaySelectCreditCard } from "./cards/credit/bandhan/bandhan-rupay-select-credit-card";
+import { bandhan_visa_gold_credit_card } from "./cards/credit/bandhan/bandhan-visa-gold-credit-card";
 import { bandhanVisaPlatinumCreditCard } from "./cards/credit/bandhan/bandhan-visa-platinum-credit-card";
 import { bandhanVisaSignatureCreditCard } from "./cards/credit/bandhan/bandhan-visa-signature-credit-card";
 import { bobAssureCreditCard } from "./cards/credit/bob/bob-assure-credit-card";
@@ -67,10 +74,16 @@ import { bobCorporateCreditCard } from "./cards/credit/bob/bob-corporate-credit-
 import { bobEasyCreditCard } from "./cards/credit/bob/bob-easy-credit-card";
 import { bobEternaCreditCard } from "./cards/credit/bob/bob-eterna-credit-card";
 import { bobFinboosterCreditCard } from "./cards/credit/bob/bob-finbooster-credit-card";
+import { bob_mastercard_world_credit_card } from "./cards/credit/bob/bob-mastercard-world-credit-card";
 import { bobPremierCreditCard } from "./cards/credit/bob/bob-premier-credit-card";
+import { bob_rupay_gold_credit_card } from "./cards/credit/bob/bob-rupay-gold-credit-card";
+import { bob_rupay_platinum_credit_card } from "./cards/credit/bob/bob-rupay-platinum-credit-card";
 import { bobSelectCreditCard } from "./cards/credit/bob/bob-select-credit-card";
 import { bobSwipezCreditCard } from "./cards/credit/bob/bob-swipez-credit-card";
 import { bobTrionCreditCard } from "./cards/credit/bob/bob-trion-credit-card";
+import { bom_mastercard_platinum_credit_card } from "./cards/credit/bom/bom-mastercard-platinum-credit-card";
+import { bom_rupay_gold_credit_card } from "./cards/credit/bom/bom-rupay-gold-credit-card";
+import { bom_rupay_platinum_credit_card } from "./cards/credit/bom/bom-rupay-platinum-credit-card";
 import { bomRupaySelectCreditCard } from "./cards/credit/bom/bom-rupay-select-credit-card";
 import { bomVisaPlatinumCreditCard } from "./cards/credit/bom/bom-visa-platinum-credit-card";
 import { bomVisaSignatureCreditCard } from "./cards/credit/bom/bom-visa-signature-credit-card";
@@ -78,19 +91,37 @@ import { canaraBusinessCreditCard } from "./cards/credit/canara/canara-business-
 import { canaraCorporateCreditCard } from "./cards/credit/canara/canara-corporate-credit-card";
 import { canaraGlobalCreditCard } from "./cards/credit/canara/canara-global-credit-card";
 import { canaraGoldRewardsCreditCard } from "./cards/credit/canara/canara-gold-rewards-credit-card";
+import { canara_mastercard_world_credit_card } from "./cards/credit/canara/canara-mastercard-world-credit-card";
 import { canaraPrestigeCreditCard } from "./cards/credit/canara/canara-prestige-credit-card";
+import { canara_rupay_gold_credit_card } from "./cards/credit/canara/canara-rupay-gold-credit-card";
+import { canara_rupay_platinum_credit_card } from "./cards/credit/canara/canara-rupay-platinum-credit-card";
 import { canaraRupaySelectCreditCard } from "./cards/credit/canara/canara-rupee-select-credit-card";
 import { canaraVisaClassicCreditCard } from "./cards/credit/canara/canara-visa-classic-credit-card";
+import { central_rupay_select_credit_card } from "./cards/credit/central/central-rupay-select-credit-card";
+import { central_visa_gold_credit_card } from "./cards/credit/central/central-visa-gold-credit-card";
+import { central_visa_platinum_credit_card } from "./cards/credit/central/central-visa-platinum-credit-card";
+import { cub_mastercard_platinum_credit_card } from "./cards/credit/cub/cub-mastercard-platinum-credit-card";
+import { cub_rupay_gold_credit_card } from "./cards/credit/cub/cub-rupay-gold-credit-card";
 import { cubRupaySelectCreditCard } from "./cards/credit/cub/cub-rupay-select-credit-card";
+import { cub_visa_gold_credit_card } from "./cards/credit/cub/cub-visa-gold-credit-card";
 import { cubVisaPlatinumCreditCard } from "./cards/credit/cub/cub-visa-platinum-credit-card";
 import { cubVisaSignatureCreditCard } from "./cards/credit/cub/cub-visa-signature-credit-card";
+import { dcb_mastercard_world_credit_card } from "./cards/credit/dcb/dcb-mastercard-world-credit-card";
+import { dcb_rupay_gold_credit_card } from "./cards/credit/dcb/dcb-rupay-gold-credit-card";
 import { dcbRupaySelectCreditCard } from "./cards/credit/dcb/dcb-rupay-select-credit-card";
+import { dcb_visa_gold_credit_card } from "./cards/credit/dcb/dcb-visa-gold-credit-card";
 import { dcbVisaPlatinumCreditCard } from "./cards/credit/dcb/dcb-visa-platinum-credit-card";
 import { dcbVisaSignatureCreditCard } from "./cards/credit/dcb/dcb-visa-signature-credit-card";
+import { dhanlaxmi_mastercard_world_credit_card } from "./cards/credit/dhanlaxmi/dhanlaxmi-mastercard-world-credit-card";
+import { dhanlaxmi_rupay_platinum_credit_card } from "./cards/credit/dhanlaxmi/dhanlaxmi-rupay-platinum-credit-card";
 import { dhanlaxmiRupaySelectCreditCard } from "./cards/credit/dhanlaxmi/dhanlaxmi-rupay-select-credit-card";
+import { dhanlaxmi_visa_gold_credit_card } from "./cards/credit/dhanlaxmi/dhanlaxmi-visa-gold-credit-card";
 import { dhanlaxmiVisaPlatinumCreditCard } from "./cards/credit/dhanlaxmi/dhanlaxmi-visa-platinum-credit-card";
 import { dhanlaxmiVisaSignatureCreditCard } from "./cards/credit/dhanlaxmi/dhanlaxmi-visa-signature-credit-card";
+import { esaf_mastercard_platinum_credit_card } from "./cards/credit/esaf/esaf-mastercard-platinum-credit-card";
+import { esaf_rupay_gold_credit_card } from "./cards/credit/esaf/esaf-rupay-gold-credit-card";
 import { esafRupaySelectCreditCard } from "./cards/credit/esaf/esaf-rupay-select-credit-card";
+import { esaf_visa_gold_credit_card } from "./cards/credit/esaf/esaf-visa-gold-credit-card";
 import { esafVisaPlatinumCreditCard } from "./cards/credit/esaf/esaf-visa-platinum-credit-card";
 import { esafVisaSignatureCreditCard } from "./cards/credit/esaf/esaf-visa-signature-credit-card";
 import { federalBusinessCreditCard } from "./cards/credit/federal/federal-business-credit-card";
@@ -98,9 +129,13 @@ import { federalCelestaCreditCard } from "./cards/credit/federal/federal-celesta
 import { federalCorporateCreditCard } from "./cards/credit/federal/federal-corporate-credit-card";
 import { federalGoldRewardsCreditCard } from "./cards/credit/federal/federal-gold-rewards-credit-card";
 import { federalImperioCreditCard } from "./cards/credit/federal/federal-imperio-credit-card";
+import { federal_mastercard_gold_credit_card } from "./cards/credit/federal/federal-mastercard-gold-credit-card";
+import { federal_rupay_gold_credit_card } from "./cards/credit/federal/federal-rupay-gold-credit-card";
+import { federal_rupay_platinum_credit_card } from "./cards/credit/federal/federal-rupay-platinum-credit-card";
 import { federalRupaySelectCreditCard } from "./cards/credit/federal/federal-rupay-select-credit-card";
 import { federalScorpionCreditCard } from "./cards/credit/federal/federal-scorpion-credit-card";
 import { federalSignetCreditCard } from "./cards/credit/federal/federal-signet-credit-card";
+import { federal_visa_world_credit_card } from "./cards/credit/federal/federal-visa-world-credit-card";
 import { hdfcBusinessRegaliaCreditCard } from "./cards/credit/hdfc/hdfc-business-regalia-credit-card";
 import { hdfcCorporateCreditCard } from "./cards/credit/hdfc/hdfc-corporate-credit-card";
 import { hdfcDinersBlackCreditCard } from "./cards/credit/hdfc/hdfc-diners-black-credit-card";
@@ -135,10 +170,13 @@ import { hsbcCashbackCreditCard } from "./cards/credit/hsbc/hsbc-cashback-credit
 import { hsbcCorporateCreditCard } from "./cards/credit/hsbc/hsbc-corporate-credit-card";
 import { hsbcGoldCreditCard } from "./cards/credit/hsbc/hsbc-gold-credit-card";
 import { hsbcLivePlusCreditCard } from "./cards/credit/hsbc/hsbc-live-plus-credit-card";
+import { hsbc_mastercard_gold_credit_card } from "./cards/credit/hsbc/hsbc-mastercard-gold-credit-card";
 import { hsbcPlatinumRewardsCreditCard } from "./cards/credit/hsbc/hsbc-platinum-rewards-credit-card";
 import { hsbcPremierCreditCard } from "./cards/credit/hsbc/hsbc-premier-credit-card";
+import { hsbc_rupay_platinum_credit_card } from "./cards/credit/hsbc/hsbc-rupay-platinum-credit-card";
 import { hsbcSmartValueCreditCard } from "./cards/credit/hsbc/hsbc-smart-value-credit-card";
 import { hsbcTravelOneCreditCard } from "./cards/credit/hsbc/hsbc-travel-one-credit-card";
+import { hsbc_visa_infinite_credit_card } from "./cards/credit/hsbc/hsbc-visa-infinite-credit-card";
 import { iciciAdaniOnePlatinumCreditCard } from "./cards/credit/icici/icici-adani-one-platinum-credit-card";
 import { iciciAdaniOneSignatureCreditCard } from "./cards/credit/icici/icici-adani-one-signature-credit-card";
 import { iciciAmazonPayCreditCard } from "./cards/credit/icici/icici-amazon-pay-credit-card";
@@ -167,6 +205,16 @@ import { iciciRubyxCreditCard } from "./cards/credit/icici/icici-rubyx-credit-ca
 import { iciciSapphiroCreditCard } from "./cards/credit/icici/icici-sapphiro-credit-card";
 import { iciciTimesBlackCreditCard } from "./cards/credit/icici/icici-times-black-credit-card";
 import { iciciVisaSignatureCreditCard } from "./cards/credit/icici/icici-visa-signature-credit-card";
+import { idbi_aspire_platinum_credit_card } from "./cards/credit/idbi/idbi-aspire-platinum-credit-card";
+import { idbi_euphoria_world_credit_card } from "./cards/credit/idbi/idbi-euphoria-world-credit-card";
+import { idbi_imperium_platinum_credit_card } from "./cards/credit/idbi/idbi-imperium-platinum-credit-card";
+import { idbi_mastercard_world_credit_card } from "./cards/credit/idbi/idbi-mastercard-world-credit-card";
+import { idbi_royale_signature_credit_card } from "./cards/credit/idbi/idbi-royale-signature-credit-card";
+import { idbi_rupay_platinum_credit_card } from "./cards/credit/idbi/idbi-rupay-platinum-credit-card";
+import { idbi_rupay_select_credit_card } from "./cards/credit/idbi/idbi-rupay-select-credit-card";
+import { idbi_visa_platinum_credit_card } from "./cards/credit/idbi/idbi-visa-platinum-credit-card";
+import { idbiVisaSignatureCreditCard } from "./cards/credit/idbi/idbi-visa-signature-credit-card";
+import { idbi_winnings_credit_card } from "./cards/credit/idbi/idbi-winnings-credit-card";
 import { idfcBusinessCreditCard } from "./cards/credit/idfc/idfc-business-credit-card";
 import { idfcClassicUpiCreditCard } from "./cards/credit/idfc/idfc-classic-upi-credit-card";
 import { idfcCorporateCreditCard } from "./cards/credit/idfc/idfc-corporate-credit-card";
@@ -176,8 +224,20 @@ import { idfcFirstPowerCreditCard } from "./cards/credit/idfc/idfc-first-power-c
 import { idfcFirstPrivateCreditCard } from "./cards/credit/idfc/idfc-first-private-credit-card";
 import { idfcFirstSelectCreditCard } from "./cards/credit/idfc/idfc-first-select-credit-card";
 import { idfcFirstWealthCreditCard } from "./cards/credit/idfc/idfc-first-wealth-credit-card";
+import { idfc_mastercard_gold_credit_card } from "./cards/credit/idfc/idfc-mastercard-gold-credit-card";
 import { idfcMillenniaCreditCard } from "./cards/credit/idfc/idfc-millennia-credit-card";
 import { idfcPowerPlusCreditCard } from "./cards/credit/idfc/idfc-power-plus-credit-card";
+import { idfc_rupay_gold_credit_card } from "./cards/credit/idfc/idfc-rupay-gold-credit-card";
+import { idfc_rupay_platinum_credit_card } from "./cards/credit/idfc/idfc-rupay-platinum-credit-card";
+import { idfc_visa_world_credit_card } from "./cards/credit/idfc/idfc-visa-world-credit-card";
+import { indianbank_global_classic_credit_card } from "./cards/credit/indianbank/indianbank-global-classic-credit-card";
+import { indianbank_global_gold_credit_card } from "./cards/credit/indianbank/indianbank-global-gold-credit-card";
+import { indianbank_platinum_credit_card } from "./cards/credit/indianbank/indianbank-platinum-credit-card";
+import { indianbank_rupay_gold_credit_card } from "./cards/credit/indianbank/indianbank-rupay-gold-credit-card";
+import { indianbank_rupay_select_credit_card } from "./cards/credit/indianbank/indianbank-rupay-select-credit-card";
+import { indianbank_visa_business_credit_card } from "./cards/credit/indianbank/indianbank-visa-business-credit-card";
+import { indianbank_visa_platinum_credit_card } from "./cards/credit/indianbank/indianbank-visa-platinum-credit-card";
+import { indianbank_visa_signature_credit_card } from "./cards/credit/indianbank/indianbank-visa-signature-credit-card";
 import { indusindAuraCreditCard } from "./cards/credit/indusind/indusind-aura-credit-card";
 import { indusindClubVisaCreditCard } from "./cards/credit/indusind/indusind-club-visa-credit-card";
 import { indusindCrestCreditCard } from "./cards/credit/indusind/indusind-crest-credit-card";
@@ -185,22 +245,35 @@ import { indusindDuoCreditCard } from "./cards/credit/indusind/indusind-duo-cred
 import { indusindEazydinerCreditCard } from "./cards/credit/indusind/indusind-eazydiner-credit-card";
 import { indusindIconCreditCard } from "./cards/credit/indusind/indusind-icon-credit-card";
 import { indusIndLegendCreditCard } from "./cards/credit/indusind/indusind-legend-credit-card";
+import { indusind_mastercard_gold_credit_card } from "./cards/credit/indusind/indusind-mastercard-gold-credit-card";
 import { indusindNexxtCreditCard } from "./cards/credit/indusind/indusind-nexxt-credit-card";
 import { indusIndPinnacleCreditCard } from "./cards/credit/indusind/indusind-pinnacle-credit-card";
 import { indusindPioneerCreditCard } from "./cards/credit/indusind/indusind-pioneer-credit-card";
 import { indusindPlatinumCreditCard } from "./cards/credit/indusind/indusind-platinum-credit-card";
 import { indusindRupayCreditCard } from "./cards/credit/indusind/indusind-rupay-credit-card";
+import { indusind_rupay_gold_credit_card } from "./cards/credit/indusind/indusind-rupay-gold-credit-card";
+import { indusind_rupay_platinum_credit_card } from "./cards/credit/indusind/indusind-rupay-platinum-credit-card";
+import { indusind_visa_world_credit_card } from "./cards/credit/indusind/indusind-visa-world-credit-card";
 import { indusindWealthCreditCard } from "./cards/credit/indusind/indusind-wealth-credit-card";
+import { iob_mastercard_platinum_credit_card } from "./cards/credit/iob/iob-mastercard-platinum-credit-card";
+import { iob_rupay_platinum_credit_card } from "./cards/credit/iob/iob-rupay-platinum-credit-card";
 import { iobRupaySelectCreditCard } from "./cards/credit/iob/iob-rupay-select-credit-card";
+import { iob_visa_gold_credit_card } from "./cards/credit/iob/iob-visa-gold-credit-card";
 import { iobVisaPlatinumCreditCard } from "./cards/credit/iob/iob-visa-platinum-credit-card";
 import { iobVisaSignatureCreditCard } from "./cards/credit/iob/iob-visa-signature-credit-card";
+import { jkb_mastercard_platinum_credit_card } from "./cards/credit/jkb/jkb-mastercard-platinum-credit-card";
+import { jkb_rupay_gold_credit_card } from "./cards/credit/jkb/jkb-rupay-gold-credit-card";
 import { jkbRupaySelectCreditCard } from "./cards/credit/jkb/jkb-rupay-select-credit-card";
+import { jkb_visa_gold_credit_card } from "./cards/credit/jkb/jkb-visa-gold-credit-card";
 import { jkbVisaPlatinumCreditCard } from "./cards/credit/jkb/jkb-visa-platinum-credit-card";
 import { jkbVisaSignatureCreditCard } from "./cards/credit/jkb/jkb-visa-signature-credit-card";
 import { karnatakaBusinessCreditCard } from "./cards/credit/karnataka/karnataka-business-credit-card";
 import { karnatakaCorporateCreditCard } from "./cards/credit/karnataka/karnataka-corporate-credit-card";
 import { karnatakaGoldCreditCard } from "./cards/credit/karnataka/karnataka-gold-credit-card";
+import { karnataka_mastercard_world_credit_card } from "./cards/credit/karnataka/karnataka-mastercard-world-credit-card";
 import { karnatakaRupayCreditCard } from "./cards/credit/karnataka/karnataka-rupay-credit-card";
+import { karnataka_rupay_gold_credit_card } from "./cards/credit/karnataka/karnataka-rupay-gold-credit-card";
+import { karnataka_rupay_platinum_credit_card } from "./cards/credit/karnataka/karnataka-rupay-platinum-credit-card";
 import { karnatakaVisaPlatinumCreditCard } from "./cards/credit/karnataka/karnataka-visa-platinum-credit-card";
 import { karnatakaVisaSignatureCreditCard } from "./cards/credit/karnataka/karnataka-visa-signature-credit-card";
 import { kotak811CreditCard } from "./cards/credit/kotak/kotak-811-credit-card";
@@ -209,17 +282,24 @@ import { kotakCorporateCreditCard } from "./cards/credit/kotak/kotak-corporate-c
 import { kotakDelightPlatinumCreditCard } from "./cards/credit/kotak/kotak-delight-platinum-credit-card";
 import { kotakEssentiaCreditCard } from "./cards/credit/kotak/kotak-essentia-credit-card";
 import { kotakGoldCreditCard } from "./cards/credit/kotak/kotak-gold-credit-card";
+import { kotak_mastercard_gold_credit_card } from "./cards/credit/kotak/kotak-mastercard-gold-credit-card";
 import { kotakMojoCreditCard } from "./cards/credit/kotak/kotak-mojo-credit-card";
 import { kotakNriCreditCard } from "./cards/credit/kotak/kotak-nri-credit-card";
 import { kotakPlatinumCreditCard } from "./cards/credit/kotak/kotak-platinum-credit-card";
 import { kotakPrivyLeagueCreditCard } from "./cards/credit/kotak/kotak-privy-league-credit-card";
 import { kotakPvrCreditCard } from "./cards/credit/kotak/kotak-pvr-credit-card";
 import { kotakRoyaleSignatureCreditCard } from "./cards/credit/kotak/kotak-royale-signature-credit-card";
+import { kotak_rupay_gold_credit_card } from "./cards/credit/kotak/kotak-rupay-gold-credit-card";
+import { kotak_rupay_platinum_credit_card } from "./cards/credit/kotak/kotak-rupay-platinum-credit-card";
 import { kotakSolitaireCreditCard } from "./cards/credit/kotak/kotak-solitaire-credit-card";
 import { kotakUrbaneCreditCard } from "./cards/credit/kotak/kotak-urbane-credit-card";
+import { kotak_visa_world_credit_card } from "./cards/credit/kotak/kotak-visa-world-credit-card";
 import { kotakWhiteCreditCard } from "./cards/credit/kotak/kotak-white-credit-card";
 import { kotakZenCreditCard } from "./cards/credit/kotak/kotak-zen-credit-card";
+import { kvb_mastercard_platinum_credit_card } from "./cards/credit/kvb/kvb-mastercard-platinum-credit-card";
+import { kvb_rupay_gold_credit_card } from "./cards/credit/kvb/kvb-rupay-gold-credit-card";
 import { kvbRupaySelectCreditCard } from "./cards/credit/kvb/kvb-rupay-select-credit-card";
+import { kvb_visa_gold_credit_card } from "./cards/credit/kvb/kvb-visa-gold-credit-card";
 import { kvbVisaPlatinumCreditCard } from "./cards/credit/kvb/kvb-visa-platinum-credit-card";
 import { kvbVisaSignatureCreditCard } from "./cards/credit/kvb/kvb-visa-signature-credit-card";
 import { pnbBusinessCreditCard } from "./cards/credit/pnb/pnb-business-credit-card";
@@ -227,23 +307,38 @@ import { pnbCorporateCreditCard } from "./cards/credit/pnb/pnb-corporate-credit-
 import { pnbEliteCreditCard } from "./cards/credit/pnb/pnb-elite-credit-card";
 import { pnbGlobalGoldCreditCard } from "./cards/credit/pnb/pnb-global-gold-credit-card";
 import { pnbGlobalPlatinumCreditCard } from "./cards/credit/pnb/pnb-global-platinum-credit-card";
+import { pnb_mastercard_world_credit_card } from "./cards/credit/pnb/pnb-mastercard-world-credit-card";
+import { pnb_rupay_gold_credit_card } from "./cards/credit/pnb/pnb-rupay-gold-credit-card";
 import { pnbRuPayPlatinumCreditCard } from "./cards/credit/pnb/pnb-rupay-platinum-credit-card";
 import { pnbRuPaySelectCreditCard } from "./cards/credit/pnb/pnb-rupay-select-credit-card";
+import { pnb_visa_signature_credit_card } from "./cards/credit/pnb/pnb-visa-signature-credit-card";
 import { pnbWaveCreditCard } from "./cards/credit/pnb/pnb-wave-credit-card";
 import { pnbWaveNCreditCard } from "./cards/credit/pnb/pnb-wave-n-pay-credit-card";
+import { psb_mastercard_platinum_credit_card } from "./cards/credit/psb/psb-mastercard-platinum-credit-card";
+import { psb_rupay_gold_credit_card } from "./cards/credit/psb/psb-rupay-gold-credit-card";
 import { psbRupaySelectCreditCard } from "./cards/credit/psb/psb-rupay-select-credit-card";
+import { psb_visa_gold_credit_card } from "./cards/credit/psb/psb-visa-gold-credit-card";
 import { psbVisaPlatinumCreditCard } from "./cards/credit/psb/psb-visa-platinum-credit-card";
 import { psbVisaSignatureCreditCard } from "./cards/credit/psb/psb-visa-signature-credit-card";
 import { rblBajajFinservCreditCard } from "./cards/credit/rbl/rbl-bajaj-finserv-credit-card";
 import { rblBusinessCreditCard } from "./cards/credit/rbl/rbl-business-credit-card";
 import { rblCorporateCreditCard } from "./cards/credit/rbl/rbl-corporate-credit-card";
 import { rblIconCreditCard } from "./cards/credit/rbl/rbl-icon-credit-card";
+import { rbl_mastercard_gold_credit_card } from "./cards/credit/rbl/rbl-mastercard-gold-credit-card";
 import { rblMaximaCreditCard } from "./cards/credit/rbl/rbl-maxima-credit-card";
 import { rblPlatinumPlusCreditCard } from "./cards/credit/rbl/rbl-platinum-plus-credit-card";
 import { rblPopcornCreditCard } from "./cards/credit/rbl/rbl-popcorn-credit-card";
+import { rbl_rupay_gold_credit_card } from "./cards/credit/rbl/rbl-rupay-gold-credit-card";
+import { rbl_rupay_platinum_credit_card } from "./cards/credit/rbl/rbl-rupay-platinum-credit-card";
 import { rblShopriteCreditCard } from "./cards/credit/rbl/rbl-shoprite-credit-card";
 import { rblTitaniumCreditCard } from "./cards/credit/rbl/rbl-titanium-credit-card";
+import { rbl_visa_world_credit_card } from "./cards/credit/rbl/rbl-visa-world-credit-card";
 import { rblWorldSafariCreditCard } from "./cards/credit/rbl/rbl-world-safari-credit-card";
+import { saraswat_mastercard_platinum_credit_card } from "./cards/credit/saraswat/saraswat-mastercard-platinum-credit-card";
+import { saraswat_rupay_gold_credit_card } from "./cards/credit/saraswat/saraswat-rupay-gold-credit-card";
+import { saraswat_visa_gold_credit_card } from "./cards/credit/saraswat/saraswat-visa-gold-credit-card";
+import { saraswat_visa_platinum_credit_card } from "./cards/credit/saraswat/saraswat-visa-platinum-credit-card";
+import { saraswat_visa_signature_credit_card } from "./cards/credit/saraswat/saraswat-visa-signature-credit-card";
 import { sbiApolloSelectCreditCard } from "./cards/credit/sbi/sbi-apollo-select-credit-card";
 import { sbiAurumCreditCard } from "./cards/credit/sbi/sbi-aurum-credit-card";
 import { sbiBpclCreditCard } from "./cards/credit/sbi/sbi-bpcl-credit-card";
@@ -287,6 +382,9 @@ import { sbiYuvaCreditCard } from "./cards/credit/sbi/sbi-yuva-credit-card";
 import { sibBusinessCreditCard } from "./cards/credit/sib/sib-business-credit-card";
 import { sibCorporateCreditCard } from "./cards/credit/sib/sib-corporate-credit-card";
 import { sibGoldCreditCard } from "./cards/credit/sib/sib-gold-credit-card";
+import { sib_mastercard_world_credit_card } from "./cards/credit/sib/sib-mastercard-world-credit-card";
+import { sib_rupay_gold_credit_card } from "./cards/credit/sib/sib-rupay-gold-credit-card";
+import { sib_rupay_platinum_credit_card } from "./cards/credit/sib/sib-rupay-platinum-credit-card";
 import { sibRupaySelectCreditCard } from "./cards/credit/sib/sib-rupay-select-credit-card";
 import { sibVisaPlatinumCreditCard } from "./cards/credit/sib/sib-visa-platinum-credit-card";
 import { sibVisaSignatureCreditCard } from "./cards/credit/sib/sib-visa-signature-credit-card";
@@ -296,22 +394,36 @@ import { stanchartGoldCreditCard } from "./cards/credit/stanchart/stanchart-gold
 import { stanchartManhattanCreditCard } from "./cards/credit/stanchart/stanchart-manhattan-credit-card";
 import { stanchartPlatinumRewardsCreditCard } from "./cards/credit/stanchart/stanchart-platinum-rewards-credit-card";
 import { stanchartRewardsCreditCard } from "./cards/credit/stanchart/stanchart-rewards-credit-card";
+import { stanchart_rupay_gold_credit_card } from "./cards/credit/stanchart/stanchart-rupay-gold-credit-card";
+import { stanchart_rupay_platinum_credit_card } from "./cards/credit/stanchart/stanchart-rupay-platinum-credit-card";
 import { stanchartSmartCreditCard } from "./cards/credit/stanchart/stanchart-smart-credit-card";
 import { stanchartSuperValueCreditCard } from "./cards/credit/stanchart/stanchart-super-value-credit-card";
 import { stanchartUltimateCreditCard } from "./cards/credit/stanchart/stanchart-ultimate-credit-card";
+import { tmb_mastercard_platinum_credit_card } from "./cards/credit/tmb/tmb-mastercard-platinum-credit-card";
+import { tmb_rupay_gold_credit_card } from "./cards/credit/tmb/tmb-rupay-gold-credit-card";
 import { tmbRupaySelectCreditCard } from "./cards/credit/tmb/tmb-rupay-select-credit-card";
+import { tmb_visa_gold_credit_card } from "./cards/credit/tmb/tmb-visa-gold-credit-card";
 import { tmbVisaPlatinumCreditCard } from "./cards/credit/tmb/tmb-visa-platinum-credit-card";
 import { tmbVisaSignatureCreditCard } from "./cards/credit/tmb/tmb-visa-signature-credit-card";
+import { uco_mastercard_platinum_credit_card } from "./cards/credit/uco/uco-mastercard-platinum-credit-card";
+import { uco_rupay_gold_credit_card } from "./cards/credit/uco/uco-rupay-gold-credit-card";
 import { ucoRupaySelectCreditCard } from "./cards/credit/uco/uco-rupay-select-credit-card";
+import { uco_sbi_elite_credit_card } from "./cards/credit/uco/uco-sbi-elite-credit-card";
+import { uco_sbi_prime_credit_card } from "./cards/credit/uco/uco-sbi-prime-credit-card";
+import { uco_sbi_simplysave_credit_card } from "./cards/credit/uco/uco-sbi-simplysave-credit-card";
+import { uco_visa_gold_credit_card } from "./cards/credit/uco/uco-visa-gold-credit-card";
 import { ucoVisaPlatinumCreditCard } from "./cards/credit/uco/uco-visa-platinum-credit-card";
 import { ucoVisaSignatureCreditCard } from "./cards/credit/uco/uco-visa-signature-credit-card";
 import { unionBusinessCreditCard } from "./cards/credit/union/union-business-credit-card";
 import { unionCorporateCreditCard } from "./cards/credit/union/union-corporate-credit-card";
 import { unionGoldRewardsCreditCard } from "./cards/credit/union/union-gold-rewards-credit-card";
+import { union_mastercard_world_credit_card } from "./cards/credit/union/union-mastercard-world-credit-card";
 import { unionPlatinumCreditCard } from "./cards/credit/union/union-platinum-credit-card";
+import { union_rupay_gold_credit_card } from "./cards/credit/union/union-rupay-gold-credit-card";
 import { unionRupayPlatinumCreditCard } from "./cards/credit/union/union-rupay-platinum-credit-card";
 import { unionRupaySelectCreditCard } from "./cards/credit/union/union-rupay-select-credit-card";
 import { unionSignatureCreditCard } from "./cards/credit/union/union-signature-credit-card";
+import { unionVisaSignatureCreditCard } from "./cards/credit/union/union-visa-signature-credit-card";
 import { yesBusinessCreditCard } from "./cards/credit/yes/yes-business-credit-card";
 import { yesCorporateCreditCard } from "./cards/credit/yes/yes-corporate-credit-card";
 import { yesEliteCreditCard } from "./cards/credit/yes/yes-elite-credit-card";
@@ -320,11 +432,15 @@ import { yesFirstPreferredCreditCard } from "./cards/credit/yes/yes-first-prefer
 import { yesFuelCreditCard } from "./cards/credit/yes/yes-fuel-credit-card";
 import { yesKaleidoscopeCreditCard } from "./cards/credit/yes/yes-kaleidoscope-credit-card";
 import { yesMarqueeCreditCard } from "./cards/credit/yes/yes-marquee-credit-card";
+import { yes_mastercard_gold_credit_card } from "./cards/credit/yes/yes-mastercard-gold-credit-card";
 import { yesPremiaCreditCard } from "./cards/credit/yes/yes-premia-credit-card";
 import { yesProsperityCashbackCreditCard } from "./cards/credit/yes/yes-prosperity-cashback-credit-card";
 import { yesProsperityRewardsPlusCreditCard } from "./cards/credit/yes/yes-prosperity-rewards-plus-credit-card";
 import { yesReservCreditCard } from "./cards/credit/yes/yes-reserv-credit-card";
+import { yes_rupay_gold_credit_card } from "./cards/credit/yes/yes-rupay-gold-credit-card";
+import { yes_rupay_platinum_credit_card } from "./cards/credit/yes/yes-rupay-platinum-credit-card";
 import { yesRupaySelectCreditCard } from "./cards/credit/yes/yes-rupay-select-credit-card";
+import { yes_visa_world_credit_card } from "./cards/credit/yes/yes-visa-world-credit-card";
 import { amexGoldDebitCard } from "./cards/debit/amex/amex-gold-debit-card";
 import { amexPlatinumDebitCard } from "./cards/debit/amex/amex-platinum-debit-card";
 import { auClassicDebitCard } from "./cards/debit/au/au-classic-debit-card";
@@ -335,6 +451,7 @@ import { auSignatureDebitCard } from "./cards/debit/au/au-signature-debit-card";
 import { auTitaniumDebitCard } from "./cards/debit/au/au-titanium-debit-card";
 import { axisBurgundyPrivateDebitCard } from "./cards/debit/axis/axis-burgundy-private-debit-card";
 import { axisEasyAccessDebitCard } from "./cards/debit/axis/axis-easy-access-debit-card";
+import { axisEasyShopPlatinumDebitCard } from "./cards/debit/axis/axis-easyshop-platinum-debit-card";
 import { axisGoldDebitCard } from "./cards/debit/axis/axis-gold-debit-card";
 import { axisInternationalDebitCard } from "./cards/debit/axis/axis-international-debit-card";
 import { axisLibertyDebitCard } from "./cards/debit/axis/axis-liberty-debit-card";
@@ -345,14 +462,19 @@ import { axisRepublicDebitCard } from "./cards/debit/axis/axis-republic-debit-ca
 import { axisRewardsDebitCard } from "./cards/debit/axis/axis-rewards-debit-card";
 import { axisSignatureDebitCard } from "./cards/debit/axis/axis-signature-debit-card";
 import { axisTitaniumDebitCard } from "./cards/debit/axis/axis-titanium-debit-card";
+import { bobBhoomiRuPaySelectDebitCard } from "./cards/debit/bob/bob-bhoomi-ru-pay-select-debit-card";
 import { bobClassicDebitCard } from "./cards/debit/bob/bob-classic-debit-card";
 import { bobGoldDebitCard } from "./cards/debit/bob/bob-gold-debit-card";
 import { bobPlatinumDebitCard } from "./cards/debit/bob/bob-platinum-debit-card";
+import { bobTrionDebitCard } from "./cards/debit/bob/bob-trion-debit-card";
+import { boiRuPaySelectDebitCard } from "./cards/debit/boi/boi-ru-pay-select-debit-card";
 import { bomClassicDebitCard } from "./cards/debit/bom/bom-classic-debit-card";
 import { bomGoldDebitCard } from "./cards/debit/bom/bom-gold-debit-card";
 import { canaraClassicDebitCard } from "./cards/debit/canara/canara-classic-debit-card";
 import { canaraGoldDebitCard } from "./cards/debit/canara/canara-gold-debit-card";
 import { canaraPlatinumDebitCard } from "./cards/debit/canara/canara-platinum-debit-card";
+import { canaraRuPaySelectDebitCard } from "./cards/debit/canara/canara-ru-pay-select-debit-card";
+import { centralRuPaySelectWellnessDebitCard } from "./cards/debit/central/central-ru-pay-select-wellness-debit-card";
 import { cubClassicDebitCard } from "./cards/debit/cub/cub-classic-debit-card";
 import { dhanlaxmiClassicDebitCard } from "./cards/debit/dhanlaxmi/dhanlaxmi-classic-debit-card";
 import { federalClassicDebitCard } from "./cards/debit/federal/federal-classic-debit-card";
@@ -373,6 +495,7 @@ import { hdfcGoldDebitCard } from "./cards/debit/hdfc/hdfc-gold-debit-card";
 import { hdfcImperiaPlatinumDebitCard } from "./cards/debit/hdfc/hdfc-imperia-platinum-debit-card";
 import { hdfcInfinitiDebitCard } from "./cards/debit/hdfc/hdfc-infiniti-debit-card";
 import { hdfcInternationalDebitCard } from "./cards/debit/hdfc/hdfc-international-debit-card";
+import { hdfcMillenniaDebitCard } from "./cards/debit/hdfc/hdfc-millennia-debit-card";
 import { hdfcMoneybackDebitCard } from "./cards/debit/hdfc/hdfc-moneyback-debit-card";
 import { hdfcPlatinumDebitCard } from "./cards/debit/hdfc/hdfc-platinum-debit-card";
 import { hdfcRewardsDebitCard } from "./cards/debit/hdfc/hdfc-rewards-debit-card";
@@ -385,6 +508,7 @@ import { hsbcGoldDebitCard } from "./cards/debit/hsbc/hsbc-gold-debit-card";
 import { hsbcPlatinumDebitCard } from "./cards/debit/hsbc/hsbc-platinum-debit-card";
 import { iciciCoralDebitCard } from "./cards/debit/icici/icici-coral-debit-card";
 import { iciciCoralPlusDebitCard } from "./cards/debit/icici/icici-coral-plus-debit-card";
+import { iciciEmeraldeDebitCard } from "./cards/debit/icici/icici-emeralde-debit-card";
 import { iciciExpressionsDebitCard } from "./cards/debit/icici/icici-expressions-debit-card";
 import { iciciGoldDebitCard } from "./cards/debit/icici/icici-gold-debit-card";
 import { iciciInternationalDebitCard } from "./cards/debit/icici/icici-international-debit-card";
@@ -395,8 +519,8 @@ import { iciciSapphiroDebitCard } from "./cards/debit/icici/icici-sapphiro-debit
 import { iciciSignatureDebitCard } from "./cards/debit/icici/icici-signature-debit-card";
 import { iciciTitaniumDebitCard } from "./cards/debit/icici/icici-titanium-debit-card";
 import { idfcFirstClassicDebitCard } from "./cards/debit/idfc/idfc-first-classic-debit-card";
-import { idfcFirstPrivateMetalDebitCard } from "./cards/debit/idfc/idfc-first-private-metal-debit-card";
 import { idfcFirstPlatinumDebitCard } from "./cards/debit/idfc/idfc-first-platinum-debit-card";
+import { idfcFirstPrivateMetalDebitCard } from "./cards/debit/idfc/idfc-first-private-metal-debit-card";
 import { idfcFirstSelectDebitCard } from "./cards/debit/idfc/idfc-first-select-debit-card";
 import { idfcFirstSignatureDebitCard } from "./cards/debit/idfc/idfc-first-signature-debit-card";
 import { idfcFirstWealthDebitCard } from "./cards/debit/idfc/idfc-first-wealth-debit-card";
@@ -406,10 +530,13 @@ import { idfcInternationalDebitCard } from "./cards/debit/idfc/idfc-internationa
 import { idfcPlatinumDebitCard } from "./cards/debit/idfc/idfc-platinum-debit-card";
 import { idfcSignatureDebitCard } from "./cards/debit/idfc/idfc-signature-debit-card";
 import { idfcTitaniumDebitCard } from "./cards/debit/idfc/idfc-titanium-debit-card";
+import { indianRuPaySelectDebitCard } from "./cards/debit/indian/indian-ru-pay-select-debit-card";
 import { indusindClassicDebitCard } from "./cards/debit/indusind/indusind-classic-debit-card";
 import { indusindGoldDebitCard } from "./cards/debit/indusind/indusind-gold-debit-card";
 import { indusindPioneerInfiniteDebitCard } from "./cards/debit/indusind/indusind-pioneer-infinite-debit-card";
+import { indusindPioneerPlatinumDebitCard } from "./cards/debit/indusind/indusind-pioneer-platinum-debit-card";
 import { indusindPioneerPrivateInfiniteDebitCard } from "./cards/debit/indusind/indusind-pioneer-private-infinite-debit-card";
+import { indusindPioneerWorldDebitCard } from "./cards/debit/indusind/indusind-pioneer-world-debit-card";
 import { indusindPlatinumDebitCard } from "./cards/debit/indusind/indusind-platinum-debit-card";
 import { indusindSignatureDebitCard } from "./cards/debit/indusind/indusind-signature-debit-card";
 import { indusindSignatureExclusiveDebitCard } from "./cards/debit/indusind/indusind-signature-exclusive-debit-card";
@@ -433,11 +560,13 @@ import { kotakTitaniumDebitCard } from "./cards/debit/kotak/kotak-titanium-debit
 import { kotakWorldDebitCard } from "./cards/debit/kotak/kotak-world-debit-card";
 import { kvbClassicDebitCard } from "./cards/debit/kvb/kvb-classic-debit-card";
 import { pnbClassicDebitCard } from "./cards/debit/pnb/pnb-classic-debit-card";
+import { pnbGlobalPlatinumDebitCard } from "./cards/debit/pnb/pnb-global-platinum-debit-card";
 import { pnbGoldDebitCard } from "./cards/debit/pnb/pnb-gold-debit-card";
 import { pnbPlatinumDebitCard } from "./cards/debit/pnb/pnb-platinum-debit-card";
 import { pnbRuPaySelectDebitCard } from "./cards/debit/pnb/pnb-ru-pay-select-debit-card";
-import { pnbRuPaySelectOptimaDebitCard } from "./cards/debit/pnb/pnb-ru-pay-select-optima-debit-card";
 import { pnbRuPaySelectNeoDebitCard } from "./cards/debit/pnb/pnb-ru-pay-select-neo-debit-card";
+import { pnbRuPaySelectOptimaDebitCard } from "./cards/debit/pnb/pnb-ru-pay-select-optima-debit-card";
+import { pnbRuPayPlatinumDebitCard } from "./cards/debit/pnb/pnb-rupay-platinum-debit-card";
 import { psbClassicDebitCard } from "./cards/debit/psb/psb-classic-debit-card";
 import { psbGoldDebitCard } from "./cards/debit/psb/psb-gold-debit-card";
 import { rblClassicDebitCard } from "./cards/debit/rbl/rbl-classic-debit-card";
@@ -445,6 +574,7 @@ import { rblGoldDebitCard } from "./cards/debit/rbl/rbl-gold-debit-card";
 import { rblPlatinumDebitCard } from "./cards/debit/rbl/rbl-platinum-debit-card";
 import { rblSignatureWorldDebitCard } from "./cards/debit/rbl/rbl-signature-world-debit-card";
 import { sbiClassicDebitCard } from "./cards/debit/sbi/sbi-classic-debit-card";
+import { sbiGlobalInternationalDebitCard } from "./cards/debit/sbi/sbi-global-international-debit-card";
 import { sbiGoldDebitCard } from "./cards/debit/sbi/sbi-gold-debit-card";
 import { sbiInternationalDebitCard } from "./cards/debit/sbi/sbi-international-debit-card";
 import { sbiMastercardWorldDebitCard } from "./cards/debit/sbi/sbi-mastercard-world-debit-card";
@@ -459,47 +589,54 @@ import { stanchartClassicDebitCard } from "./cards/debit/stanchart/stanchart-cla
 import { stanchartGoldDebitCard } from "./cards/debit/stanchart/stanchart-gold-debit-card";
 import { stanchartInternationalDebitCard } from "./cards/debit/stanchart/stanchart-international-debit-card";
 import { stanchartPlatinumDebitCard } from "./cards/debit/stanchart/stanchart-platinum-debit-card";
-import { stanchartPrivateInfiniteDebitCard } from "./cards/debit/stanchart/stanchart-private-infinite-debit-card";
 import { stanchartPriorityInfiniteDebitCard } from "./cards/debit/stanchart/stanchart-priority-infinite-debit-card";
+import { stanchartPrivateInfiniteDebitCard } from "./cards/debit/stanchart/stanchart-private-infinite-debit-card";
 import { stanchartSignatureDebitCard } from "./cards/debit/stanchart/stanchart-signature-debit-card";
 import { stanchartTitaniumDebitCard } from "./cards/debit/stanchart/stanchart-titanium-debit-card";
+import { suryodayRuPaySelectDebitCard } from "./cards/debit/suryoday/suryoday-ru-pay-select-debit-card";
 import { ucoClassicDebitCard } from "./cards/debit/uco/uco-classic-debit-card";
 import { ucoGoldDebitCard } from "./cards/debit/uco/uco-gold-debit-card";
+import { ujjivanRuPaySelectInternationalDebitCard } from "./cards/debit/ujjivan/ujjivan-ru-pay-select-international-debit-card";
 import { unionClassicDebitCard } from "./cards/debit/union/union-classic-debit-card";
 import { unionGoldDebitCard } from "./cards/debit/union/union-gold-debit-card";
 import { unionPlatinumDebitCard } from "./cards/debit/union/union-platinum-debit-card";
 import { unionRuPaySelectDebitCard } from "./cards/debit/union/union-ru-pay-select-debit-card";
-import { boiRuPaySelectDebitCard } from "./cards/debit/boi/boi-ru-pay-select-debit-card";
-import { bobBhoomiRuPaySelectDebitCard } from "./cards/debit/bob/bob-bhoomi-ru-pay-select-debit-card";
-import { canaraRuPaySelectDebitCard } from "./cards/debit/canara/canara-ru-pay-select-debit-card";
-import { indianRuPaySelectDebitCard } from "./cards/debit/indian/indian-ru-pay-select-debit-card";
-import { centralRuPaySelectWellnessDebitCard } from "./cards/debit/central/central-ru-pay-select-wellness-debit-card";
-import { ujjivanRuPaySelectInternationalDebitCard } from "./cards/debit/ujjivan/ujjivan-ru-pay-select-international-debit-card";
-import { suryodayRuPaySelectDebitCard } from "./cards/debit/suryoday/suryoday-ru-pay-select-debit-card";
+import { yesApexInternationalDebitCard } from "./cards/debit/yes/yes-apex-international-debit-card";
+import { yesApexInternationalMetalDebitCard } from "./cards/debit/yes/yes-apex-international-metal-debit-card";
 import { yesClassicDebitCard } from "./cards/debit/yes/yes-classic-debit-card";
+import { yesElevateInternationalDebitCard } from "./cards/debit/yes/yes-elevate-international-debit-card";
 import { yesGoldDebitCard } from "./cards/debit/yes/yes-gold-debit-card";
 import { yesInternationalDebitCard } from "./cards/debit/yes/yes-international-debit-card";
 import { yesPlatinumDebitCard } from "./cards/debit/yes/yes-platinum-debit-card";
 import { yesPremiaDebitCard } from "./cards/debit/yes/yes-premia-debit-card";
+import { yesPremierDebitCard } from "./cards/debit/yes/yes-premier-debit-card";
+import { yesProsperityPlatinumDebitCard } from "./cards/debit/yes/yes-prosperity-platinum-debit-card";
 import { yesRewardsDebitCard } from "./cards/debit/yes/yes-rewards-debit-card";
 import { yesRupayDebitCard } from "./cards/debit/yes/yes-rupay-debit-card";
 import { yesSignatureDebitCard } from "./cards/debit/yes/yes-signature-debit-card";
 import { yesTitaniumDebitCard } from "./cards/debit/yes/yes-titanium-debit-card";
 import { airtelPaymentsBankPrepaidCard } from "./cards/prepaid/airtel/airtel-payments-bank-prepaid-card";
+import { amazonPayGiftPrepaidCard } from "./cards/prepaid/amazonpay/amazon-pay-gift-prepaid-card";
+import { amazonPayIciciPrepaidCard } from "./cards/prepaid/amazonpay/amazon-pay-icici-prepaid-card";
 import { auPrepaidCard2 } from "./cards/prepaid/au/au-prepaid-card-2";
 import { auPrepaidCard } from "./cards/prepaid/au/au-prepaid-card";
+import { axisBankMultiCurrencyForexCard } from "./cards/prepaid/axis/axis-bank-multi-currency-forex-card";
 import { axisPrepaidCard2 } from "./cards/prepaid/axis/axis-prepaid-card-2";
 import { axisPrepaidCard } from "./cards/prepaid/axis/axis-prepaid-card";
 import { bandhanPrepaidPrepaidCard } from "./cards/prepaid/bandhan/bandhan-prepaid-prepaid-card";
+import { bigbasketGiftPrepaidCard } from "./cards/prepaid/bigbasket/bigbasket-gift-prepaid-card";
 import { bobPrepaidCard } from "./cards/prepaid/bob/bob-prepaid-card";
 import { boiPrepaidPrepaidCard } from "./cards/prepaid/boi/boi-prepaid-prepaid-card";
 import { canaraPrepaidCard2 } from "./cards/prepaid/canara/canara-prepaid-card-2";
 import { canaraPrepaidCard } from "./cards/prepaid/canara/canara-prepaid-card";
 import { cashePrepaidCard2 } from "./cards/prepaid/cashe/cashe-prepaid-card-2";
+import { cashePrepaidCard } from "./cards/prepaid/cashe/cashe-prepaid-card";
 import { centralPrepaidPrepaidCard } from "./cards/prepaid/central/central-prepaid-prepaid-card";
+import { credPayPrepaidCard } from "./cards/prepaid/cred/cred-pay-prepaid-card";
 import { credPrepaidCard2 } from "./cards/prepaid/cred/cred-prepaid-card-2";
 import { cubPrepaidPrepaidCard } from "./cards/prepaid/cub/cub-prepaid-prepaid-card";
 import { dcbPrepaidPrepaidCard } from "./cards/prepaid/dcb/dcb-prepaid-prepaid-card";
+import { decentroCorporatePrepaidCard } from "./cards/prepaid/decentro/decentro-corporate-prepaid-card";
 import { dhanlaxmiPrepaidPrepaidCard } from "./cards/prepaid/dhanlaxmi/dhanlaxmi-prepaid-prepaid-card";
 import { epaylaterPrepaidCard2 } from "./cards/prepaid/epaylater/epaylater-prepaid-card-2";
 import { esafPrepaidPrepaidCard } from "./cards/prepaid/esaf/esaf-prepaid-prepaid-card";
@@ -508,47 +645,82 @@ import { federalPrepaidCard2 } from "./cards/prepaid/federal/federal-prepaid-car
 import { federalPrepaidCard } from "./cards/prepaid/federal/federal-prepaid-card";
 import { fiPrepaidCard } from "./cards/prepaid/fi/fi-prepaid-card";
 import { fibePrepaidCard2 } from "./cards/prepaid/fibe/fibe-prepaid-card-2";
+import { fibePrepaidCard } from "./cards/prepaid/fibe/fibe-prepaid-card";
+import { flipkartGiftPrepaidCard } from "./cards/prepaid/flipkart/flipkart-gift-prepaid-card";
+import { freechargePayLaterPrepaidCard } from "./cards/prepaid/freecharge/freecharge-pay-later-prepaid-card";
 import { freechargePrepaidCard } from "./cards/prepaid/freecharge/freecharge-prepaid-card";
+import { freoPrepaidCard } from "./cards/prepaid/freo/freo-prepaid-card";
+import { gyftrPrepaidCard } from "./cards/prepaid/gyftr/gyftr-prepaid-card";
+import { happayCorporatePrepaidCard } from "./cards/prepaid/happay/happay-corporate-prepaid-card";
+import { hdfcMulticurrencyForexCard } from "./cards/prepaid/hdfc/hdfc-multicurrency-forex-card";
 import { hdfcPrepaidCard2 } from "./cards/prepaid/hdfc/hdfc-prepaid-card-2";
 import { hdfcPrepaidCard } from "./cards/prepaid/hdfc/hdfc-prepaid-card";
 import { hsbcPrepaidCard } from "./cards/prepaid/hsbc/hsbc-prepaid-card";
+import { iciciMultiCurrencyForexPrepaidCard } from "./cards/prepaid/icici/icici-multi-currency-forex-prepaid-card";
 import { iciciPrepaidCard2 } from "./cards/prepaid/icici/icici-prepaid-card-2";
 import { iciciPrepaidCard } from "./cards/prepaid/icici/icici-prepaid-card";
 import { idbiPrepaidPrepaidCard } from "./cards/prepaid/idbi/idbi-prepaid-prepaid-card";
 import { idfcPrepaidCard2 } from "./cards/prepaid/idfc/idfc-prepaid-card-2";
 import { idfcPrepaidCard } from "./cards/prepaid/idfc/idfc-prepaid-card";
 import { indianPrepaidPrepaidCard } from "./cards/prepaid/indian/indian-prepaid-prepaid-card";
+import { indusindMulticurrencyForexCard } from "./cards/prepaid/indusind/indusind-multicurrency-forex-card";
 import { indusindPrepaidCard } from "./cards/prepaid/indusind/indusind-prepaid-card";
+import { itzcashCorporatePrepaidCard } from "./cards/prepaid/itzcash/itzcash-corporate-prepaid-card";
+import { jiomoneyPrepaidCard } from "./cards/prepaid/jiomoney/jiomoney-prepaid-card";
+import { jupiterEdgePrepaidCard } from "./cards/prepaid/jupiter/jupiter-edge-prepaid-card";
 import { jupiterPrepaidCard } from "./cards/prepaid/jupiter/jupiter-prepaid-card";
 import { karnatakaPrepaidCard2 } from "./cards/prepaid/karnataka/karnataka-prepaid-card-2";
+import { kotakForexCard } from "./cards/prepaid/kotak/kotak-forex-card";
 import { kotakPrepaidCard2 } from "./cards/prepaid/kotak/kotak-prepaid-card-2";
 import { kotakPrepaidCard } from "./cards/prepaid/kotak/kotak-prepaid-card";
 import { kreditbeePrepaidCard2 } from "./cards/prepaid/kreditbee/kreditbee-prepaid-card-2";
+import { kreditbeePrepaidCard } from "./cards/prepaid/kreditbee/kreditbee-prepaid-card";
 import { kvbPrepaidPrepaidCard } from "./cards/prepaid/kvb/kvb-prepaid-prepaid-card";
 import { lazypayPrepaidCard2 } from "./cards/prepaid/lazypay/lazypay-prepaid-card-2";
+import { mobikwikPrepaidCard } from "./cards/prepaid/mobikwik/mobikwik-prepaid-card";
+import { mobikwikZipPrepaidCard } from "./cards/prepaid/mobikwik/mobikwik-zip-prepaid-card";
 import { moneytapPrepaidCard2 } from "./cards/prepaid/moneytap/moneytap-prepaid-card-2";
+import { moneytapPrepaidCard } from "./cards/prepaid/moneytap/moneytap-prepaid-card";
+import { myntraGiftPrepaidCard } from "./cards/prepaid/myntra/myntra-gift-prepaid-card";
 import { naviPrepaidCard2 } from "./cards/prepaid/navi/navi-prepaid-card-2";
+import { naviPrepaidCard } from "./cards/prepaid/navi/navi-prepaid-card";
+import { niyoGlobalPrepaidCard2 } from "./cards/prepaid/niyo/niyo-global-prepaid-card-2";
 import { niyoGlobalPrepaidCard } from "./cards/prepaid/niyo/niyo-global-prepaid-card";
 import { niyoXPrepaidCard } from "./cards/prepaid/niyo/niyo-x-prepaid-card";
+import { olamoneyPrepaidCard } from "./cards/prepaid/olamoney/olamoney-prepaid-card";
 import { oneCardPrepaid } from "./cards/prepaid/onecard/onecard-prepaid";
+import { openBusinessPrepaidCard } from "./cards/prepaid/open/open-business-prepaid-card";
+import { paysensePrepaidCard } from "./cards/prepaid/paysense/paysense-prepaid-card";
 import { paytmPaymentsBankPrepaidCard } from "./cards/prepaid/paytm/paytm-payments-bank-prepaid-card";
+import { phonepePrepaidCard } from "./cards/prepaid/phonepe/phonepe-prepaid-card";
 import { pnbPrepaidCard } from "./cards/prepaid/pnb/pnb-prepaid-card";
+import { qwikcilverGiftPrepaidCard } from "./cards/prepaid/qwikcilver/qwikcilver-gift-prepaid-card";
 import { razorpayPrepaidCard } from "./cards/prepaid/razorpay/razorpay-prepaid-card";
+import { razorpayxCorporatePrepaidCard } from "./cards/prepaid/razorpayx/razorpayx-corporate-prepaid-card";
 import { rblPrepaidCard } from "./cards/prepaid/rbl/rbl-prepaid-card";
 import { ringPrepaidCard2 } from "./cards/prepaid/ring/ring-prepaid-card-2";
+import { sbiMulticurrencyTravelPrepaidCard } from "./cards/prepaid/sbi/sbi-multicurrency-travel-prepaid-card";
 import { sbiPrepaidCard } from "./cards/prepaid/sbi/sbi-prepaid-card";
 import { sibPrepaidCard2 } from "./cards/prepaid/sib/sib-prepaid-card-2";
 import { simplPrepaidCard2 } from "./cards/prepaid/simpl/simpl-prepaid-card-2";
 import { slicePrepaidCard2 } from "./cards/prepaid/slice/slice-prepaid-card-2";
+import { slicePrepaidCard } from "./cards/prepaid/slice/slice-prepaid-card";
 import { stanchartPrepaidCard2 } from "./cards/prepaid/stanchart/stanchart-prepaid-card-2";
 import { stanchartPrepaidCard } from "./cards/prepaid/stanchart/stanchart-prepaid-card";
+import { tataNeuPayPrepaidCard } from "./cards/prepaid/tata-neu-pay/tata-neu-pay-prepaid-card";
+import { thomasCookForexPrepaidCard } from "./cards/prepaid/thomascook/thomas-cook-forex-prepaid-card";
 import { tmbPrepaidPrepaidCard } from "./cards/prepaid/tmb/tmb-prepaid-prepaid-card";
 import { unionPrepaidCard2 } from "./cards/prepaid/union/union-prepaid-card-2";
 import { unionPrepaidCard } from "./cards/prepaid/union/union-prepaid-card";
+import { vayanaCorporatePrepaidCard } from "./cards/prepaid/vayana/vayana-corporate-prepaid-card";
 import { walrusPrepaidCard } from "./cards/prepaid/walrus/walrus-prepaid-card";
+import { woohooGiftPrepaidCard } from "./cards/prepaid/woohoo/woohoo-gift-prepaid-card";
+import { bookmyforexYesForexPrepaidCard } from "./cards/prepaid/yes/bookmyforex-yes-forex-prepaid-card";
 import { yesPrepaidCard2 } from "./cards/prepaid/yes/yes-prepaid-card-2";
 import { yesPrepaidCard } from "./cards/prepaid/yes/yes-prepaid-card";
 import { zestmoneyPrepaidCard2 } from "./cards/prepaid/zestmoney/zestmoney-prepaid-card-2";
+import { zestmoneyPrepaidCard } from "./cards/prepaid/zestmoney/zestmoney-prepaid-card";
+import { zetaCorporatePrepaidCard } from "./cards/prepaid/zeta/zeta-corporate-prepaid-card";
 
 export const ALL_CARDS: CardData[] = [
   amexBlueCreditCard,
@@ -569,7 +741,11 @@ export const ALL_CARDS: CardData[] = [
   auBusinessCreditCard,
   auCorporateCreditCard,
   auLitCreditCard,
+  au_mastercard_gold_credit_card,
   auPremiumCreditCard,
+  au_rupay_gold_credit_card,
+  au_rupay_platinum_credit_card,
+  au_visa_world_credit_card,
   auZenithCreditCard,
   axisAceCreditCard,
   axisAirtelCreditCard,
@@ -605,7 +781,10 @@ export const ALL_CARDS: CardData[] = [
   axisSupermoneyRupayCreditCard,
   axisVistaraCreditCard,
   axisVistaraSignatureCreditCard,
+  bandhan_mastercard_platinum_credit_card,
+  bandhan_rupay_gold_credit_card,
   bandhanRupaySelectCreditCard,
+  bandhan_visa_gold_credit_card,
   bandhanVisaPlatinumCreditCard,
   bandhanVisaSignatureCreditCard,
   bobAssureCreditCard,
@@ -615,10 +794,16 @@ export const ALL_CARDS: CardData[] = [
   bobEasyCreditCard,
   bobEternaCreditCard,
   bobFinboosterCreditCard,
+  bob_mastercard_world_credit_card,
   bobPremierCreditCard,
+  bob_rupay_gold_credit_card,
+  bob_rupay_platinum_credit_card,
   bobSelectCreditCard,
   bobSwipezCreditCard,
   bobTrionCreditCard,
+  bom_mastercard_platinum_credit_card,
+  bom_rupay_gold_credit_card,
+  bom_rupay_platinum_credit_card,
   bomRupaySelectCreditCard,
   bomVisaPlatinumCreditCard,
   bomVisaSignatureCreditCard,
@@ -626,19 +811,37 @@ export const ALL_CARDS: CardData[] = [
   canaraCorporateCreditCard,
   canaraGlobalCreditCard,
   canaraGoldRewardsCreditCard,
+  canara_mastercard_world_credit_card,
   canaraPrestigeCreditCard,
+  canara_rupay_gold_credit_card,
+  canara_rupay_platinum_credit_card,
   canaraRupaySelectCreditCard,
   canaraVisaClassicCreditCard,
+  central_rupay_select_credit_card,
+  central_visa_gold_credit_card,
+  central_visa_platinum_credit_card,
+  cub_mastercard_platinum_credit_card,
+  cub_rupay_gold_credit_card,
   cubRupaySelectCreditCard,
+  cub_visa_gold_credit_card,
   cubVisaPlatinumCreditCard,
   cubVisaSignatureCreditCard,
+  dcb_mastercard_world_credit_card,
+  dcb_rupay_gold_credit_card,
   dcbRupaySelectCreditCard,
+  dcb_visa_gold_credit_card,
   dcbVisaPlatinumCreditCard,
   dcbVisaSignatureCreditCard,
+  dhanlaxmi_mastercard_world_credit_card,
+  dhanlaxmi_rupay_platinum_credit_card,
   dhanlaxmiRupaySelectCreditCard,
+  dhanlaxmi_visa_gold_credit_card,
   dhanlaxmiVisaPlatinumCreditCard,
   dhanlaxmiVisaSignatureCreditCard,
+  esaf_mastercard_platinum_credit_card,
+  esaf_rupay_gold_credit_card,
   esafRupaySelectCreditCard,
+  esaf_visa_gold_credit_card,
   esafVisaPlatinumCreditCard,
   esafVisaSignatureCreditCard,
   federalBusinessCreditCard,
@@ -646,9 +849,13 @@ export const ALL_CARDS: CardData[] = [
   federalCorporateCreditCard,
   federalGoldRewardsCreditCard,
   federalImperioCreditCard,
+  federal_mastercard_gold_credit_card,
+  federal_rupay_gold_credit_card,
+  federal_rupay_platinum_credit_card,
   federalRupaySelectCreditCard,
   federalScorpionCreditCard,
   federalSignetCreditCard,
+  federal_visa_world_credit_card,
   hdfcBusinessRegaliaCreditCard,
   hdfcCorporateCreditCard,
   hdfcDinersBlackCreditCard,
@@ -683,10 +890,13 @@ export const ALL_CARDS: CardData[] = [
   hsbcCorporateCreditCard,
   hsbcGoldCreditCard,
   hsbcLivePlusCreditCard,
+  hsbc_mastercard_gold_credit_card,
   hsbcPlatinumRewardsCreditCard,
   hsbcPremierCreditCard,
+  hsbc_rupay_platinum_credit_card,
   hsbcSmartValueCreditCard,
   hsbcTravelOneCreditCard,
+  hsbc_visa_infinite_credit_card,
   iciciAdaniOnePlatinumCreditCard,
   iciciAdaniOneSignatureCreditCard,
   iciciAmazonPayCreditCard,
@@ -715,6 +925,16 @@ export const ALL_CARDS: CardData[] = [
   iciciSapphiroCreditCard,
   iciciTimesBlackCreditCard,
   iciciVisaSignatureCreditCard,
+  idbi_aspire_platinum_credit_card,
+  idbi_euphoria_world_credit_card,
+  idbi_imperium_platinum_credit_card,
+  idbi_mastercard_world_credit_card,
+  idbi_royale_signature_credit_card,
+  idbi_rupay_platinum_credit_card,
+  idbi_rupay_select_credit_card,
+  idbi_visa_platinum_credit_card,
+  idbiVisaSignatureCreditCard,
+  idbi_winnings_credit_card,
   idfcBusinessCreditCard,
   idfcClassicUpiCreditCard,
   idfcCorporateCreditCard,
@@ -724,8 +944,20 @@ export const ALL_CARDS: CardData[] = [
   idfcFirstPrivateCreditCard,
   idfcFirstSelectCreditCard,
   idfcFirstWealthCreditCard,
+  idfc_mastercard_gold_credit_card,
   idfcMillenniaCreditCard,
   idfcPowerPlusCreditCard,
+  idfc_rupay_gold_credit_card,
+  idfc_rupay_platinum_credit_card,
+  idfc_visa_world_credit_card,
+  indianbank_global_classic_credit_card,
+  indianbank_global_gold_credit_card,
+  indianbank_platinum_credit_card,
+  indianbank_rupay_gold_credit_card,
+  indianbank_rupay_select_credit_card,
+  indianbank_visa_business_credit_card,
+  indianbank_visa_platinum_credit_card,
+  indianbank_visa_signature_credit_card,
   indusindAuraCreditCard,
   indusindClubVisaCreditCard,
   indusindCrestCreditCard,
@@ -733,22 +965,35 @@ export const ALL_CARDS: CardData[] = [
   indusindEazydinerCreditCard,
   indusindIconCreditCard,
   indusIndLegendCreditCard,
+  indusind_mastercard_gold_credit_card,
   indusindNexxtCreditCard,
   indusIndPinnacleCreditCard,
   indusindPioneerCreditCard,
   indusindPlatinumCreditCard,
   indusindRupayCreditCard,
+  indusind_rupay_gold_credit_card,
+  indusind_rupay_platinum_credit_card,
+  indusind_visa_world_credit_card,
   indusindWealthCreditCard,
+  iob_mastercard_platinum_credit_card,
+  iob_rupay_platinum_credit_card,
   iobRupaySelectCreditCard,
+  iob_visa_gold_credit_card,
   iobVisaPlatinumCreditCard,
   iobVisaSignatureCreditCard,
+  jkb_mastercard_platinum_credit_card,
+  jkb_rupay_gold_credit_card,
   jkbRupaySelectCreditCard,
+  jkb_visa_gold_credit_card,
   jkbVisaPlatinumCreditCard,
   jkbVisaSignatureCreditCard,
   karnatakaBusinessCreditCard,
   karnatakaCorporateCreditCard,
   karnatakaGoldCreditCard,
+  karnataka_mastercard_world_credit_card,
   karnatakaRupayCreditCard,
+  karnataka_rupay_gold_credit_card,
+  karnataka_rupay_platinum_credit_card,
   karnatakaVisaPlatinumCreditCard,
   karnatakaVisaSignatureCreditCard,
   kotak811CreditCard,
@@ -757,17 +1002,24 @@ export const ALL_CARDS: CardData[] = [
   kotakDelightPlatinumCreditCard,
   kotakEssentiaCreditCard,
   kotakGoldCreditCard,
+  kotak_mastercard_gold_credit_card,
   kotakMojoCreditCard,
   kotakNriCreditCard,
   kotakPlatinumCreditCard,
   kotakPrivyLeagueCreditCard,
   kotakPvrCreditCard,
   kotakRoyaleSignatureCreditCard,
+  kotak_rupay_gold_credit_card,
+  kotak_rupay_platinum_credit_card,
   kotakSolitaireCreditCard,
   kotakUrbaneCreditCard,
+  kotak_visa_world_credit_card,
   kotakWhiteCreditCard,
   kotakZenCreditCard,
+  kvb_mastercard_platinum_credit_card,
+  kvb_rupay_gold_credit_card,
   kvbRupaySelectCreditCard,
+  kvb_visa_gold_credit_card,
   kvbVisaPlatinumCreditCard,
   kvbVisaSignatureCreditCard,
   pnbBusinessCreditCard,
@@ -775,23 +1027,38 @@ export const ALL_CARDS: CardData[] = [
   pnbEliteCreditCard,
   pnbGlobalGoldCreditCard,
   pnbGlobalPlatinumCreditCard,
+  pnb_mastercard_world_credit_card,
+  pnb_rupay_gold_credit_card,
   pnbRuPayPlatinumCreditCard,
   pnbRuPaySelectCreditCard,
+  pnb_visa_signature_credit_card,
   pnbWaveCreditCard,
   pnbWaveNCreditCard,
+  psb_mastercard_platinum_credit_card,
+  psb_rupay_gold_credit_card,
   psbRupaySelectCreditCard,
+  psb_visa_gold_credit_card,
   psbVisaPlatinumCreditCard,
   psbVisaSignatureCreditCard,
   rblBajajFinservCreditCard,
   rblBusinessCreditCard,
   rblCorporateCreditCard,
   rblIconCreditCard,
+  rbl_mastercard_gold_credit_card,
   rblMaximaCreditCard,
   rblPlatinumPlusCreditCard,
   rblPopcornCreditCard,
+  rbl_rupay_gold_credit_card,
+  rbl_rupay_platinum_credit_card,
   rblShopriteCreditCard,
   rblTitaniumCreditCard,
+  rbl_visa_world_credit_card,
   rblWorldSafariCreditCard,
+  saraswat_mastercard_platinum_credit_card,
+  saraswat_rupay_gold_credit_card,
+  saraswat_visa_gold_credit_card,
+  saraswat_visa_platinum_credit_card,
+  saraswat_visa_signature_credit_card,
   sbiApolloSelectCreditCard,
   sbiAurumCreditCard,
   sbiBpclCreditCard,
@@ -835,6 +1102,9 @@ export const ALL_CARDS: CardData[] = [
   sibBusinessCreditCard,
   sibCorporateCreditCard,
   sibGoldCreditCard,
+  sib_mastercard_world_credit_card,
+  sib_rupay_gold_credit_card,
+  sib_rupay_platinum_credit_card,
   sibRupaySelectCreditCard,
   sibVisaPlatinumCreditCard,
   sibVisaSignatureCreditCard,
@@ -844,22 +1114,36 @@ export const ALL_CARDS: CardData[] = [
   stanchartManhattanCreditCard,
   stanchartPlatinumRewardsCreditCard,
   stanchartRewardsCreditCard,
+  stanchart_rupay_gold_credit_card,
+  stanchart_rupay_platinum_credit_card,
   stanchartSmartCreditCard,
   stanchartSuperValueCreditCard,
   stanchartUltimateCreditCard,
+  tmb_mastercard_platinum_credit_card,
+  tmb_rupay_gold_credit_card,
   tmbRupaySelectCreditCard,
+  tmb_visa_gold_credit_card,
   tmbVisaPlatinumCreditCard,
   tmbVisaSignatureCreditCard,
+  uco_mastercard_platinum_credit_card,
+  uco_rupay_gold_credit_card,
   ucoRupaySelectCreditCard,
+  uco_sbi_elite_credit_card,
+  uco_sbi_prime_credit_card,
+  uco_sbi_simplysave_credit_card,
+  uco_visa_gold_credit_card,
   ucoVisaPlatinumCreditCard,
   ucoVisaSignatureCreditCard,
   unionBusinessCreditCard,
   unionCorporateCreditCard,
   unionGoldRewardsCreditCard,
+  union_mastercard_world_credit_card,
   unionPlatinumCreditCard,
+  union_rupay_gold_credit_card,
   unionRupayPlatinumCreditCard,
   unionRupaySelectCreditCard,
   unionSignatureCreditCard,
+  unionVisaSignatureCreditCard,
   yesBusinessCreditCard,
   yesCorporateCreditCard,
   yesEliteCreditCard,
@@ -868,11 +1152,15 @@ export const ALL_CARDS: CardData[] = [
   yesFuelCreditCard,
   yesKaleidoscopeCreditCard,
   yesMarqueeCreditCard,
+  yes_mastercard_gold_credit_card,
   yesPremiaCreditCard,
   yesProsperityCashbackCreditCard,
   yesProsperityRewardsPlusCreditCard,
   yesReservCreditCard,
+  yes_rupay_gold_credit_card,
+  yes_rupay_platinum_credit_card,
   yesRupaySelectCreditCard,
+  yes_visa_world_credit_card,
   amexGoldDebitCard,
   amexPlatinumDebitCard,
   auClassicDebitCard,
@@ -881,23 +1169,32 @@ export const ALL_CARDS: CardData[] = [
   auPlatinumDebitCard,
   auSignatureDebitCard,
   auTitaniumDebitCard,
+  axisBurgundyPrivateDebitCard,
   axisEasyAccessDebitCard,
+  axisEasyShopPlatinumDebitCard,
   axisGoldDebitCard,
   axisInternationalDebitCard,
+  axisLibertyDebitCard,
   axisPlatinumDebitCard,
   axisPriorityDebitCard,
   axisPrivilegeDebitCard,
+  axisRepublicDebitCard,
   axisRewardsDebitCard,
   axisSignatureDebitCard,
   axisTitaniumDebitCard,
+  bobBhoomiRuPaySelectDebitCard,
   bobClassicDebitCard,
   bobGoldDebitCard,
   bobPlatinumDebitCard,
+  bobTrionDebitCard,
+  boiRuPaySelectDebitCard,
   bomClassicDebitCard,
   bomGoldDebitCard,
   canaraClassicDebitCard,
   canaraGoldDebitCard,
   canaraPlatinumDebitCard,
+  canaraRuPaySelectDebitCard,
+  centralRuPaySelectWellnessDebitCard,
   cubClassicDebitCard,
   dhanlaxmiClassicDebitCard,
   federalClassicDebitCard,
@@ -906,14 +1203,23 @@ export const ALL_CARDS: CardData[] = [
   federalPlatinumDebitCard,
   federalSignatureDebitCard,
   federalTitaniumDebitCard,
+  federalVisaCelestaDebitCard,
+  federalVisaImperioDebitCard,
+  hdfcBusinessDebitCard,
   hdfcEasyShopGoldDebitCard,
   hdfcEasyShopInternationalDebitCard,
   hdfcEasyShopPlatinumDebitCard,
   hdfcEasyShopRegularDebitCard,
   hdfcEasyShopTitaniumDebitCard,
   hdfcGoldDebitCard,
+  hdfcImperiaPlatinumDebitCard,
+  hdfcInfinitiDebitCard,
   hdfcInternationalDebitCard,
+  hdfcMillenniaDebitCard,
+  hdfcMoneybackDebitCard,
   hdfcPlatinumDebitCard,
+  hdfcRewardsDebitCard,
+  hdfcRuPayPlatinumDebitCard,
   hdfcSignatureDebitCard,
   hdfcTimesPointsDebitCard,
   hdfcTitaniumDebitCard,
@@ -921,26 +1227,40 @@ export const ALL_CARDS: CardData[] = [
   hsbcGoldDebitCard,
   hsbcPlatinumDebitCard,
   iciciCoralDebitCard,
+  iciciCoralPlusDebitCard,
+  iciciEmeraldeDebitCard,
   iciciExpressionsDebitCard,
   iciciGoldDebitCard,
   iciciInternationalDebitCard,
   iciciPlatinumDebitCard,
+  iciciPrivateBankingDebitCard,
+  iciciRubyxDebitCard,
   iciciSapphiroDebitCard,
   iciciSignatureDebitCard,
   iciciTitaniumDebitCard,
   idfcFirstClassicDebitCard,
   idfcFirstPlatinumDebitCard,
+  idfcFirstPrivateMetalDebitCard,
+  idfcFirstSelectDebitCard,
   idfcFirstSignatureDebitCard,
   idfcFirstWealthDebitCard,
+  idfcFirstWorldDebitCard,
   idfcGoldDebitCard,
   idfcInternationalDebitCard,
   idfcPlatinumDebitCard,
   idfcSignatureDebitCard,
   idfcTitaniumDebitCard,
+  indianRuPaySelectDebitCard,
   indusindClassicDebitCard,
   indusindGoldDebitCard,
+  indusindPioneerInfiniteDebitCard,
+  indusindPioneerPlatinumDebitCard,
+  indusindPioneerPrivateInfiniteDebitCard,
+  indusindPioneerWorldDebitCard,
   indusindPlatinumDebitCard,
   indusindSignatureDebitCard,
+  indusindSignatureExclusiveDebitCard,
+  indusindWorldExclusiveDebitCard,
   iobClassicDebitCard,
   iobGoldDebitCard,
   jkbClassicDebitCard,
@@ -948,26 +1268,37 @@ export const ALL_CARDS: CardData[] = [
   kotak811DebitCard,
   kotakAceDebitCard,
   kotakGoldDebitCard,
+  kotakInfiniteDebitCard,
   kotakInternationalDebitCard,
   kotakPlatinumDebitCard,
+  kotakPrivyLeaguePlatinumDebitCard,
   kotakSignatureDebitCard,
+  kotakSignatureProDebitCard,
   kotakSilkDebitCard,
+  kotakSolitaireDebitCard,
   kotakTitaniumDebitCard,
+  kotakWorldDebitCard,
   kvbClassicDebitCard,
   pnbClassicDebitCard,
+  pnbGlobalPlatinumDebitCard,
   pnbGoldDebitCard,
   pnbPlatinumDebitCard,
   pnbRuPaySelectDebitCard,
-  pnbRuPaySelectOptimaDebitCard,
   pnbRuPaySelectNeoDebitCard,
+  pnbRuPaySelectOptimaDebitCard,
+  pnbRuPayPlatinumDebitCard,
   psbClassicDebitCard,
   psbGoldDebitCard,
   rblClassicDebitCard,
   rblGoldDebitCard,
   rblPlatinumDebitCard,
+  rblSignatureWorldDebitCard,
   sbiClassicDebitCard,
+  sbiGlobalInternationalDebitCard,
   sbiGoldDebitCard,
   sbiInternationalDebitCard,
+  sbiMastercardWorldDebitCard,
+  sbiNariShaktiPlatinumDebitCard,
   sbiPlatinumDebitCard,
   sbiPrivilegeDebitCard,
   sbiRupayClassicDebitCard,
@@ -978,45 +1309,54 @@ export const ALL_CARDS: CardData[] = [
   stanchartGoldDebitCard,
   stanchartInternationalDebitCard,
   stanchartPlatinumDebitCard,
+  stanchartPriorityInfiniteDebitCard,
+  stanchartPrivateInfiniteDebitCard,
   stanchartSignatureDebitCard,
   stanchartTitaniumDebitCard,
+  suryodayRuPaySelectDebitCard,
   ucoClassicDebitCard,
   ucoGoldDebitCard,
+  ujjivanRuPaySelectInternationalDebitCard,
   unionClassicDebitCard,
   unionGoldDebitCard,
   unionPlatinumDebitCard,
   unionRuPaySelectDebitCard,
-  boiRuPaySelectDebitCard,
-  bobBhoomiRuPaySelectDebitCard,
-  canaraRuPaySelectDebitCard,
-  indianRuPaySelectDebitCard,
-  centralRuPaySelectWellnessDebitCard,
-  ujjivanRuPaySelectInternationalDebitCard,
-  suryodayRuPaySelectDebitCard,
+  yesApexInternationalDebitCard,
+  yesApexInternationalMetalDebitCard,
   yesClassicDebitCard,
+  yesElevateInternationalDebitCard,
   yesGoldDebitCard,
   yesInternationalDebitCard,
   yesPlatinumDebitCard,
   yesPremiaDebitCard,
+  yesPremierDebitCard,
+  yesProsperityPlatinumDebitCard,
   yesRewardsDebitCard,
   yesRupayDebitCard,
   yesSignatureDebitCard,
   yesTitaniumDebitCard,
   airtelPaymentsBankPrepaidCard,
+  amazonPayGiftPrepaidCard,
+  amazonPayIciciPrepaidCard,
   auPrepaidCard2,
   auPrepaidCard,
+  axisBankMultiCurrencyForexCard,
   axisPrepaidCard2,
   axisPrepaidCard,
   bandhanPrepaidPrepaidCard,
+  bigbasketGiftPrepaidCard,
   bobPrepaidCard,
   boiPrepaidPrepaidCard,
   canaraPrepaidCard2,
   canaraPrepaidCard,
   cashePrepaidCard2,
+  cashePrepaidCard,
   centralPrepaidPrepaidCard,
+  credPayPrepaidCard,
   credPrepaidCard2,
   cubPrepaidPrepaidCard,
   dcbPrepaidPrepaidCard,
+  decentroCorporatePrepaidCard,
   dhanlaxmiPrepaidPrepaidCard,
   epaylaterPrepaidCard2,
   esafPrepaidPrepaidCard,
@@ -1025,47 +1365,82 @@ export const ALL_CARDS: CardData[] = [
   federalPrepaidCard,
   fiPrepaidCard,
   fibePrepaidCard2,
+  fibePrepaidCard,
+  flipkartGiftPrepaidCard,
+  freechargePayLaterPrepaidCard,
   freechargePrepaidCard,
+  freoPrepaidCard,
+  gyftrPrepaidCard,
+  happayCorporatePrepaidCard,
+  hdfcMulticurrencyForexCard,
   hdfcPrepaidCard2,
   hdfcPrepaidCard,
   hsbcPrepaidCard,
+  iciciMultiCurrencyForexPrepaidCard,
   iciciPrepaidCard2,
   iciciPrepaidCard,
   idbiPrepaidPrepaidCard,
   idfcPrepaidCard2,
   idfcPrepaidCard,
   indianPrepaidPrepaidCard,
+  indusindMulticurrencyForexCard,
   indusindPrepaidCard,
+  itzcashCorporatePrepaidCard,
+  jiomoneyPrepaidCard,
+  jupiterEdgePrepaidCard,
   jupiterPrepaidCard,
   karnatakaPrepaidCard2,
+  kotakForexCard,
   kotakPrepaidCard2,
   kotakPrepaidCard,
   kreditbeePrepaidCard2,
+  kreditbeePrepaidCard,
   kvbPrepaidPrepaidCard,
   lazypayPrepaidCard2,
+  mobikwikPrepaidCard,
+  mobikwikZipPrepaidCard,
   moneytapPrepaidCard2,
+  moneytapPrepaidCard,
+  myntraGiftPrepaidCard,
   naviPrepaidCard2,
+  naviPrepaidCard,
+  niyoGlobalPrepaidCard2,
   niyoGlobalPrepaidCard,
   niyoXPrepaidCard,
+  olamoneyPrepaidCard,
   oneCardPrepaid,
+  openBusinessPrepaidCard,
+  paysensePrepaidCard,
   paytmPaymentsBankPrepaidCard,
+  phonepePrepaidCard,
   pnbPrepaidCard,
+  qwikcilverGiftPrepaidCard,
   razorpayPrepaidCard,
+  razorpayxCorporatePrepaidCard,
   rblPrepaidCard,
   ringPrepaidCard2,
+  sbiMulticurrencyTravelPrepaidCard,
   sbiPrepaidCard,
   sibPrepaidCard2,
   simplPrepaidCard2,
   slicePrepaidCard2,
+  slicePrepaidCard,
   stanchartPrepaidCard2,
   stanchartPrepaidCard,
+  tataNeuPayPrepaidCard,
+  thomasCookForexPrepaidCard,
   tmbPrepaidPrepaidCard,
   unionPrepaidCard2,
   unionPrepaidCard,
+  vayanaCorporatePrepaidCard,
   walrusPrepaidCard,
+  woohooGiftPrepaidCard,
+  bookmyforexYesForexPrepaidCard,
   yesPrepaidCard2,
   yesPrepaidCard,
   zestmoneyPrepaidCard2,
+  zestmoneyPrepaidCard,
+  zetaCorporatePrepaidCard,
 ];
 
 export const CREDIT_CARDS = ALL_CARDS.filter(
