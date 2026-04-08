@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/PageLayout.astro";
+
+const entries = await getCollection("glossary");
+const sorted = entries.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+
+const grouped: Record<string, typeof sorted> = {};
+for (const entry of sorted) {
+  const letter = entry.data.title[0]?.toUpperCase() ?? "#";
+  if (!grouped[letter]) grouped[letter] = [];
+  grouped[letter].push(entry);
+}
+
+const letters = Object.keys(grouped).sort();
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+---
+
+<PageLayout
+  title="Card Glossary"
+  description="A comprehensive glossary of credit card, debit card, and financial terms explained in simple language."
+>
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-10">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary">
+        Glossary
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary max-w-2xl">
+        Everything you need to know about credit card terms, fees, and features — explained simply.
+      </p>
+    </header>
+
+    <!-- A-Z Navigation -->
+    <nav class="mb-10 flex flex-wrap gap-1.5" aria-label="Alphabetical navigation">
+      {alphabet.map((letter) => {
+        const hasEntries = letters.includes(letter);
+        return hasEntries ? (
+          <a
+            href={`#letter-${letter}`}
+            class="w-9 h-9 flex items-center justify-center rounded-lg text-sm font-semibold bg-bg-secondary border border-border-default text-text-primary hover:border-gold hover:text-gold transition-colors"
+          >
+            {letter}
+          </a>
+        ) : (
+          <span class="w-9 h-9 flex items-center justify-center rounded-lg text-sm font-semibold bg-bg-secondary/50 border border-border-default/50 text-text-tertiary/40 cursor-default">
+            {letter}
+          </span>
+        );
+      })}
+    </nav>
+
+    <!-- Grouped Terms -->
+    <div class="space-y-10">
+      {letters.map((letter) => (
+        <section id={`letter-${letter}`}>
+          <h2 class="font-display text-2xl font-bold text-gold mb-4 sticky top-0 bg-bg-primary/90 backdrop-blur-sm py-2 z-10 border-b border-border-default">
+            {letter}
+          </h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {grouped[letter]!.map((entry) => (
+              <li>
+                <a
+                  href={`/glossary/${entry.id}`}
+                  class="group block p-4 rounded-xl bg-bg-secondary border border-border-default hover:border-gold/30 transition-all duration-200"
+                >
+                  <h3 class="font-semibold text-text-primary group-hover:text-gold transition-colors">
+                    {entry.data.title}
+                  </h3>
+                  <p class="mt-1 text-sm text-text-secondary leading-relaxed line-clamp-2">
+                    {entry.data.description}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+</PageLayout>

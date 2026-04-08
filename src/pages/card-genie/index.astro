@@ -1,0 +1,32 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import GenieChat from "@/components/genie/GenieChat";
+import { ALL_CARDS } from "@/data/index";
+---
+
+<PageLayout
+  title="Card Genie — AI Card Recommendation"
+  description="Tell Card Genie your spending habits and get personalized credit card recommendations powered by AI. Free, fast, and data-driven."
+>
+  <section class="py-12 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+          Card <span class="text-gold">Genie</span>
+        </h1>
+        <p class="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+          Tell me how you spend, and I'll find the perfect card for you. Powered by AI with data on {ALL_CARDS.length}+ cards.
+        </p>
+      </div>
+
+      <!-- Chat Interface -->
+      <GenieChat client:load allCards={ALL_CARDS} />
+
+      <!-- Disclaimer -->
+      <p class="mt-6 text-center text-xs text-text-tertiary max-w-xl mx-auto">
+        Card Genie uses AI to provide recommendations based on publicly available card data. Always verify details with the issuing bank before applying.
+      </p>
+    </div>
+  </section>
+</PageLayout>

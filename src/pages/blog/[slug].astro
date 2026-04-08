@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import { generateArticleJsonLd } from "@/lib/seo";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const jsonLd = generateArticleJsonLd(
+  post.data.title,
+  post.data.description,
+  post.data.author,
+  post.data.publishDate,
+  post.data.updateDate ?? post.data.publishDate,
+  `https://card.oriz.in/blog/${post.id}`,
+  post.data.featuredImage ?? "/images/og/default.png"
+);
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  publishDate={post.data.publishDate}
+  updateDate={post.data.updateDate}
+  author={post.data.author}
+  category={post.data.category}
+  tags={post.data.tags}
+  featuredImage={post.data.featuredImage ?? "/images/og/default.png"}
+  jsonLd={jsonLd}
+>
+  <Content />
+</BlogLayout>

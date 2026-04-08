@@ -1,0 +1,69 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+
+const calculators = [
+  {
+    title: "Credit Card Interest Calculator",
+    description:
+      "See how long it takes to pay off your balance and how much interest you'll pay. Enter your outstanding amount, interest rate, and monthly payment.",
+    href: "/calculators/credit-card-interest",
+    icon: "₹",
+  },
+  {
+    title: "Rewards Value Calculator",
+    description:
+      "Enter your monthly spend by category and see how much each card earns you. Compare annual rewards value across 300+ cards.",
+    href: "/calculators/rewards-value",
+    icon: "★",
+  },
+  {
+    title: "Fuel Savings Calculator",
+    description:
+      "Find out how much you save on fuel surcharges with different cards. Compare top fuel cards based on your monthly fuel spend.",
+    href: "/calculators/fuel-savings",
+    icon: "⛽",
+  },
+];
+---
+
+<PageLayout
+  title="Financial Calculators"
+  description="Free calculators for credit card interest, rewards value, and fuel savings. Make smarter financial decisions with data-driven tools."
+>
+  <section class="py-12 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+          Financial <span class="text-gold">Calculators</span>
+        </h1>
+        <p class="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+          Free tools to help you understand credit card costs, rewards, and savings.
+        </p>
+      </div>
+
+      <!-- Calculator Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {calculators.map((calc) => (
+          <a
+            href={calc.href}
+            class="group rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default hover:border-gold/30 p-8 transition-all duration-200 hover:shadow-xl hover:shadow-black/20"
+          >
+            <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
+              <span class="text-2xl">{calc.icon}</span>
+            </div>
+            <h2 class="font-display text-xl font-bold text-text-primary group-hover:text-gold transition-colors">
+              {calc.title}
+            </h2>
+            <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+              {calc.description}
+            </p>
+            <span class="mt-5 inline-block text-sm text-gold group-hover:text-gold-2 transition-colors">
+              Open Calculator →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

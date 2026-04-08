@@ -1,0 +1,133 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+
+const title = "Free Credit Score Check India 2026 | CIBIL, Experian, CRIF, Equifax | card.oriz.in";
+const description = "Check your credit score for free from all 4 RBI-licensed bureaus. Understand your score, improve it, and find cards you qualify for.";
+
+const bureaus = [
+  {
+    name: "CIBIL (TransUnion)",
+    description: "India's most widely used credit score. Ranges from 300 to 900. Most banks check CIBIL before approving credit cards and loans.",
+    url: "https://www.cibil.com/freecibilscore",
+    range: "300–900",
+    goodScore: "750+",
+  },
+  {
+    name: "Experian",
+    description: "Globally recognized credit bureau. Experian score ranges from 300 to 850 and is used by many NBFCs and fintech lenders.",
+    url: "https://www.experian.in/consumer/credit-score",
+    range: "300–850",
+    goodScore: "700+",
+  },
+  {
+    name: "CRIF High Mark",
+    description: "Widely used by banks and microfinance institutions. CRIF scores range from 300 to 900.",
+    url: "https://www.crifhighmark.com/Individual/FreeCreditScore.aspx",
+    range: "300–900",
+    goodScore: "700+",
+  },
+  {
+    name: "Equifax",
+    description: "One of the four RBI-licensed credit information companies. Offers credit reports and monitoring services.",
+    url: "https://www.equifax.co.in/personal/products/credit-score",
+    range: "300–900",
+    goodScore: "750+",
+  },
+];
+
+const tips = [
+  { title: "Pay on time", description: "Always pay at least the minimum due before the due date. Late payments severely impact your score." },
+  { title: "Keep utilization low", description: "Use less than 30% of your credit limit. High utilization signals over-dependence on credit." },
+  { title: "Maintain old accounts", description: "Older credit accounts improve your credit history length, which boosts your score." },
+  { title: "Limit hard inquiries", description: "Each card/loan application creates a hard inquiry. Too many in a short period hurts your score." },
+  { title: "Diversify credit mix", description: "A healthy mix of credit cards, secured loans, and unsecured loans improves your profile." },
+  { title: "Monitor your report", description: "Check for errors in your credit report and dispute inaccuracies promptly." },
+];
+
+const scoreRanges = [
+  { range: "750–900", label: "Excellent", color: "bg-emerald-card/20 text-emerald-card", cards: "All premium & super-premium cards" },
+  { range: "700–749", label: "Good", color: "bg-blue-card/20 text-blue-card", cards: "Most credit cards, including mid-tier" },
+  { range: "650–699", label: "Fair", color: "bg-gold/20 text-gold", cards: "Entry-level and secured cards" },
+  { range: "300–649", label: "Poor", color: "bg-rose-card/20 text-rose-card", cards: "Secured credit cards, prepaid cards" },
+];
+---
+
+<PageLayout title={title} description={description}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Credit Score</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Credit Score Guide
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        Your credit score determines which cards you can get. Check your score for free, understand what it means, and learn how to improve it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Free Score Check -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl font-bold text-text-primary mb-6">Check Your Free Credit Score</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {bureaus.map((bureau) => (
+          <div class="p-6 rounded-xl bg-bg-secondary border border-border-default">
+            <h3 class="font-semibold text-text-primary">{bureau.name}</h3>
+            <p class="mt-2 text-sm text-text-secondary">{bureau.description}</p>
+            <div class="mt-4 space-y-1 text-xs text-text-tertiary">
+              <p>Range: <span class="text-text-secondary">{bureau.range}</span></p>
+              <p>Good score: <span class="text-text-secondary">{bureau.goodScore}</span></p>
+            </div>
+            <a
+              href={bureau.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center px-4 py-2 text-sm font-medium text-gold border border-gold/30 rounded-lg hover:bg-gold/10 transition-colors"
+            >
+              Check Free Score ↗
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Score Ranges -->
+  <section class="py-10 bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl font-bold text-text-primary mb-6">What Your Score Means</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {scoreRanges.map((sr) => (
+          <div class="p-6 rounded-xl bg-bg-secondary border border-border-default">
+            <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${sr.color}`}>
+              {sr.label}
+            </span>
+            <p class="mt-3 text-2xl font-display font-bold text-text-primary">{sr.range}</p>
+            <p class="mt-2 text-sm text-text-secondary">{sr.cards}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl font-bold text-text-primary mb-6">Tips to Improve Your Score</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tips.map((tip) => (
+          <div class="p-6 rounded-xl bg-bg-secondary border border-border-default">
+            <h3 class="font-semibold text-text-primary">{tip.title}</h3>
+            <p class="mt-2 text-sm text-text-secondary">{tip.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

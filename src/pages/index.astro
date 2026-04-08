@@ -1,0 +1,234 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { ALL_CARDS, getBestCards } from "@/data/index";
+import { ALL_BANKS } from "@/data/banks-index";
+
+const featuredCards = getBestCards("default", 8);
+const topBanks = ALL_BANKS.slice(0, 12);
+const totalCards = ALL_CARDS.length;
+const totalBanks = ALL_BANKS.length;
+---
+
+<PageLayout
+  title="Best Credit Cards India 2026 | Compare Cards | card.oriz.in"
+  description=`Compare ${totalCards}+ credit, debit & prepaid cards from all Indian banks. AI-powered Card Genie, side-by-side comparison, reward calculators. Find your perfect card.`
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20 lg:py-32">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-tertiary"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-card/5 rounded-full blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight animate-fade-up">
+          India's Most Intelligent<br />
+          <span class="text-gold">Card Platform</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto animate-fade-up" style="animation-delay: 100ms;">
+          Compare {totalCards}+ credit, debit & prepaid cards from {totalBanks}+ banks with AI-powered recommendations and data-driven insights.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 200ms;">
+          <a
+            href="/card-genie"
+            class="px-8 py-4 bg-gold text-bg-primary font-semibold rounded-xl hover:bg-gold-2 transition-all duration-200 shadow-lg shadow-gold/20 hover:shadow-gold/40"
+          >
+            Find My Perfect Card
+          </a>
+          <a
+            href="/credit-cards"
+            class="px-8 py-4 border border-border-bright text-text-primary font-semibold rounded-xl hover:border-gold hover:text-gold transition-all duration-200"
+          >
+            Browse All Cards
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating card visuals -->
+      <div class="mt-16 relative h-48 sm:h-64 hidden lg:block">
+        {featuredCards.slice(0, 3).map((card, i) => (
+          <div
+            class={`absolute card-3d-wrapper ${i === 0 ? "left-1/4 -translate-x-1/2 rotate-[-6deg]" : i === 1 ? "left-1/2 -translate-x-1/2 rotate-[0deg] z-10" : "left-3/4 -translate-x-1/2 rotate-[6deg]"}`}
+            style={`animation: float 6s ease-in-out infinite; animation-delay: ${i * 0.5}s;`}
+          >
+            <div
+              class="card-3d w-72 h-44 rounded-2xl shadow-2xl shadow-black/40 flex items-center justify-center"
+              style={`background: linear-gradient(135deg, ${card.gradientColors[0]}, ${card.gradientColors[1]});`}
+            >
+              <span class="text-white/80 font-display text-lg font-bold">{card.bank}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="border-y border-border-default bg-bg-secondary/50 py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-3xl font-display font-bold text-gold">{totalCards}+</div>
+          <div class="text-sm text-text-tertiary mt-1">Cards in Database</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-display font-bold text-gold">{totalBanks}+</div>
+          <div class="text-sm text-text-tertiary mt-1">Banks Covered</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-display font-bold text-gold">1,000+</div>
+          <div class="text-sm text-text-tertiary mt-1">Benefits Tracked</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-display font-bold text-gold">Daily</div>
+          <div class="text-sm text-text-tertiary mt-1">Data Updated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cards -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary">
+          Editor's Picks
+        </h2>
+        <a href="/credit-cards" class="text-sm text-gold hover:text-gold-2 transition-colors">
+          View all
+        </a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredCards.map((card, i) => (
+          <div style={`animation: fadeSlideUp 0.5s ease-out forwards; animation-delay: ${i * 40}ms; opacity: 0;`}>
+            <CardThumbnail card={card} showCompare={false} client:load />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Best By Category -->
+  <section class="py-16 bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
+        Best Cards by Category
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { label: "Best Cashback", href: "/credit-cards/best/cashback", icon: "Cashback" },
+          { label: "Best Travel", href: "/credit-cards/best/travel", icon: "Travel" },
+          { label: "Best Rewards", href: "/credit-cards/best/rewards", icon: "Rewards" },
+          { label: "Best Fuel", href: "/credit-cards/best/fuel", icon: "Fuel" },
+          { label: "Best Premium", href: "/credit-cards/best/premium", icon: "Premium" },
+          { label: "No Annual Fee", href: "/credit-cards/best/no-annual-fee", icon: "Free" },
+        ].map((cat) => (
+          <a
+            href={cat.href}
+            class="group p-6 rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default hover:border-gold/30 transition-all duration-200 text-center"
+          >
+            <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center">
+              <span class="text-xs font-bold text-gold">{cat.icon.slice(0, 2)}</span>
+            </div>
+            <div class="text-sm font-semibold text-text-primary group-hover:text-gold transition-colors">{cat.label}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Card Genie Teaser -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default p-8 lg:p-12 overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
+        <div class="relative max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary">
+            Not sure which card to pick?
+          </h2>
+          <p class="mt-4 text-text-secondary text-lg">
+            Tell Card Genie what you spend on, and it will find your perfect card in under 2 minutes. Powered by AI, completely free.
+          </p>
+          <div class="mt-8">
+            <a
+              href="/card-genie"
+              class="inline-flex items-center justify-center px-6 py-3 bg-gold text-bg-primary font-semibold rounded-xl hover:bg-gold-2 transition-colors"
+            >
+              Try Card Genie
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Banks -->
+  <section class="py-16 bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
+        Top Card Issuers
+      </h2>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+        {topBanks.map((bank) => (
+          <a
+            href={`/issuers/${bank.id}`}
+            class="group flex flex-col items-center gap-3 p-4 rounded-xl border border-border-default hover:border-gold/30 bg-bg-secondary hover:bg-bg-tertiary transition-all duration-200"
+          >
+            <div class="w-12 h-12 rounded-full bg-bg-tertiary flex items-center justify-center">
+              <span class="text-sm font-bold text-text-secondary group-hover:text-gold transition-colors">
+                {bank.shortName.slice(0, 2)}
+              </span>
+            </div>
+            <span class="text-xs text-text-secondary group-hover:text-text-primary text-center transition-colors">
+              {bank.shortName}
+            </span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/issuers" class="text-sm text-gold hover:text-gold-2 transition-colors">
+          View all issuers
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculators Teaser -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/calculators/credit-card-interest" class="rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default p-8 hover:border-gold/30 transition-all duration-200">
+          <h3 class="font-display text-xl font-bold text-text-primary">Interest Calculator</h3>
+          <p class="mt-2 text-text-secondary text-sm">See how long it takes to pay off your credit card balance.</p>
+          <span class="mt-4 inline-block text-sm text-gold">Calculate now</span>
+        </a>
+        <a href="/calculators/rewards-value" class="rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default p-8 hover:border-gold/30 transition-all duration-200">
+          <h3 class="font-display text-xl font-bold text-text-primary">Rewards Calculator</h3>
+          <p class="mt-2 text-text-secondary text-sm">Find out how much you can earn with your spending pattern.</p>
+          <span class="mt-4 inline-block text-sm text-gold">Calculate now</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-12 border-t border-border-default">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-gold text-sm font-semibold mb-1">Data Verified</div>
+          <p class="text-xs text-text-tertiary">All card data sourced from official bank websites and verified regularly.</p>
+        </div>
+        <div>
+          <div class="text-gold text-sm font-semibold mb-1">No Sponsored Rankings</div>
+          <p class="text-xs text-text-tertiary">Our recommendations are purely data-driven, not influenced by banks.</p>
+        </div>
+        <div>
+          <div class="text-gold text-sm font-semibold mb-1">Updated Daily</div>
+          <p class="text-xs text-text-tertiary">Card details, fees, and benefits are tracked and updated continuously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

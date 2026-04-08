@@ -1,0 +1,271 @@
+import type { CardData } from "@/types/card";
+
+export const sbiRelianceCreditCard: CardData = {
+  id: "sbi-reliance-credit-card",
+  name: "Reliance SBI Credit Card",
+  tagline: "Earn 5X rewards at Reliance stores with everyday shopping benefits",
+  description: "The Reliance SBI Credit Card is a co-branded retail card offering 5 reward points per ₹100 at Reliance stores (Reliance Fresh, Reliance Smart, Reliance Trends, Reliance Digital) and 1 reward point per ₹100 on all other spends. Designed for frequent Reliance store shoppers.",
+  bank: "SBI Card",
+  bankCode: "sbi",
+  network: "Visa",
+  cardType: "credit",
+  tier: "Classic",
+  variant: "Reliance",
+  usage: "Domestic",
+  bin: "4594",
+  material: "Plastic",
+  colorScheme: "Blue and red with Reliance branding",
+  virtualCardAvailable: true,
+
+  eligibility: {
+    employmentType: ["Salaried", "Self-Employed"],
+    minSalary: 20000,
+    minAge: 21,
+    maxAge: 60,
+    minAnnualIncome: 240000,
+    minCreditScore: 700,
+    existingAccountRequired: false,
+    invitationOnly: false,
+    notes: [
+      "Salaried: Minimum monthly income ₹20,000",
+      "Self-Employed: Minimum ITR of ₹2.4 Lakh p.a.",
+      "Age 21–60 years",
+    ],
+  },
+
+  charges: [
+    { label: "Joining Fee", amount: 499, amountWithGst: 589, note: "Excluding 18% GST" },
+    { label: "Annual Fee", amount: 499, amountWithGst: 589, note: "Excluding 18% GST" },
+    { label: "Add-on Card Fee", amount: 0, note: "Free" },
+  ],
+
+  atmCharges: {
+    ownBankFreePerMonth: 0,
+    ownBankCharge: 250,
+    otherBankFreePerMonth: 0,
+    otherBankCharge: 250,
+    internationalWithdrawalFee: 250,
+    internationalWithdrawalPercent: 3.5,
+    balanceEnquiryOwnBank: 0,
+    balanceEnquiryOtherBank: 25,
+    miniStatementOtherBank: 25,
+  },
+
+  transactionCharges: {
+    currencyMarkupPercent: 3.5,
+    crossBorderFee: 0,
+    dccFeePercent: 1,
+    smsAlertPerMonth: 0,
+    pinRegenerationCharge: 100,
+    physicalStatementCharge: 100,
+    chequeBounceCharge: 500,
+    latePaymentFee: 950,
+    overLimitFee: 600,
+    cashAdvanceFeePercent: 2.5,
+    cashAdvanceFlatFee: 500,
+    interestRatePerMonth: 3.5,
+    annualInterestRate: 42,
+  },
+
+  fuelSurcharge: {
+    available: true,
+    waiverPercent: 1,
+    minTransactionAmount: 500,
+    maxTransactionAmount: 4000,
+    maxWaiverPerCycle: 250,
+    fuelNetworks: [],
+  },
+
+  limits: {
+    atmPerDay: 20000,
+    posEcomPerDay: 200000,
+    contactlessPerTxn: 5000,
+    contactlessDailyLimit: 25000,
+  },
+
+  insurance: {
+    accidentalDeathCover: 0,
+    permanentDisabilityCover: 0,
+    purchaseProtectionCover: 0,
+    purchaseProtectionDays: 0,
+    lostCardLiability: 100000,
+    lostCardLiabilityWindow: 24,
+    travelInsuranceCover: 0,
+    airAccidentCover: 0,
+    baggageCover: 0,
+    conditions: [
+      "Lost card liability cover up to ₹1 Lakh",
+    ],
+    provider: "SBI Card",
+  },
+
+  loungeAccess: {
+    domestic: {
+      count: 0,
+      frequency: "N/A",
+      frequencyPerYear: 0,
+      valuePerVisit: 0,
+      guestAllowed: false,
+      guestCharge: 0,
+    },
+    international: {
+      count: 0,
+      frequency: "N/A",
+      frequencyPerYear: 0,
+      valuePerVisit: 0,
+      guestAllowed: false,
+      guestCharge: 0,
+    },
+    programs: [],
+    conditions: [],
+  },
+
+  benefits: [
+    {
+      category: "shopping",
+      title: "5 Reward Points per ₹100 at Reliance Stores",
+      description: "Earn 5 reward points per ₹100 at Reliance Fresh, Smart, Trends, and Digital",
+      valueStr: "5 RP per ₹100",
+      valueNum: 0,
+      frequencyStr: "Every transaction",
+      frequencyPerYear: 0,
+      annualValue: 0,
+      conditions: ["Valid at Reliance Fresh, Smart, Trends, Digital stores"],
+      isSellable: false,
+      sellValue: 0,
+      isActive: true,
+      activationRequired: false,
+    },
+    {
+      category: "rewards",
+      title: "1 Reward Point per ₹100 on All Other Spends",
+      description: "Earn 1 reward point per ₹100 on all other retail spends",
+      valueStr: "1 RP per ₹100",
+      valueNum: 0,
+      frequencyStr: "Every transaction",
+      frequencyPerYear: 0,
+      annualValue: 0,
+      conditions: [],
+      isSellable: false,
+      sellValue: 0,
+      isActive: true,
+      activationRequired: false,
+    },
+    {
+      category: "fuel",
+      title: "Fuel Surcharge Waiver",
+      description: "1% fuel surcharge waiver on transactions between ₹500–₹4,000",
+      valueStr: "1% waiver",
+      valueNum: 250,
+      frequencyStr: "Per statement cycle",
+      frequencyPerYear: 12,
+      annualValue: 3000,
+      conditions: ["Valid on transactions ₹500–₹4,000", "Max ₹250 per statement cycle"],
+      isSellable: false,
+      sellValue: 0,
+      isActive: true,
+      activationRequired: false,
+    },
+  ],
+
+  rewardProgram: {
+    name: "SBI Reward Points",
+    earnRate: "1 RP per ₹100 (5X at Reliance stores)",
+    pointsPer100: 1,
+    pointValue: 0.25,
+    effectiveCashbackPercent: 0.25,
+    pointsExpiry: "2 years from date of accrual",
+    bonusCategories: [
+      { category: "Reliance Stores", multiplier: 5, description: "5 reward points per ₹100 at Reliance stores" },
+    ],
+    redemptionOptions: [
+      "Products & Vouchers (1 RP = ₹0.25)",
+      "Cashback (1 RP = ₹0.20)",
+      "Statement Credit",
+    ],
+    minRedemptionPoints: 1000,
+    rewardRateStr: "0.25% to 1.25%",
+    conditions: ["Excluded: fuel, rent, wallet loads, EMI conversion"],
+  },
+
+  welcomeBonus: {
+    available: true,
+    description: "500 reward points on first Reliance store transaction within 30 days",
+    valueStr: "500 Reward Points",
+    valueNum: 125,
+    conditions: ["First Reliance store transaction within 30 days"],
+  },
+
+  milestoneBonuses: [],
+
+  feeWaivers: [
+    {
+      description: "Annual fee waived on spending ₹1 Lakh in the preceding year",
+      annualSpendRequired: 100000,
+      waives: "Annual fee of ₹499 + GST",
+    },
+  ],
+
+  features: [
+    "Contactless payments",
+    "EMV chip security",
+    "Add-on cards available",
+    "EMI conversion facility",
+    "Reliance store rewards",
+  ],
+
+  validity: "5 years",
+  contactless: true,
+  ncmc: false,
+
+  creditCardDetails: {
+    billingCycleDays: 30,
+    gracePeriodDays: 50,
+    minimumDuePercent: 5,
+    minimumDueFlat: 200,
+    balanceTransfer: true,
+    emiConversion: true,
+    addOnCardAvailable: true,
+    maxAddOnCards: 2,
+    addOnCardFee: 0,
+  },
+
+  gradientColors: ["#1565c0", "#d32f2f"],
+  value: {
+    highestValue: 5000,
+    averageValue: 3000,
+    isSellable: false,
+    marketPrice: { minSellPrice: 0, maxSellPrice: 0, averageMarketValue: 0 },
+    annualNetValue: 2411,
+    tenYearNetValue: 24110,
+    totalAnnualCharges: 589,
+    totalAnnualBenefits: 3000,
+    roiPercent: 409,
+  },
+
+  emiOptions: {
+    available: true,
+    minTransactionAmount: 2500,
+    tenureOptions: [3, 6, 9, 12],
+    interestRatePerMonth: 1.5,
+    processingFeePercent: 1,
+  },
+
+  category: "rewards",
+  internationalUsable: false,
+  bestFor: ["Shopping", "Reliance", "Groceries"],
+
+  dataQuality: {
+    status: "verified",
+    verifiedFields: ["charges", "rewards", "eligibility"],
+    unverifiedFields: [],
+    sourceUrls: [
+      "https://www.sbicard.com/en/personal/credit-cards/shopping/reliance-sbi-credit-card.page",
+    ],
+    lastVerified: "2026-03-27",
+  },
+
+  customerCareNumber: "1800 180 1111",
+  applyUrl: "https://www.sbicard.com/en/personal/credit-cards/shopping/reliance-sbi-credit-card.page",
+  lastUpdated: "2026-03-27",
+};

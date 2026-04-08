@@ -1,0 +1,2 @@
+/card/:slug  /credit-cards/:slug  301
+/cards/*     /credit-cards/:splat  301

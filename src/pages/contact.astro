@@ -1,0 +1,86 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="Contact"
+  description="Get in touch with the card.oriz.in team. We welcome feedback, corrections, partnerships, and feature requests."
+>
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <header class="mb-12">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary">
+        Contact Us
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary max-w-2xl">
+        Have a question, spotted an error, or want to partner with us? We'd love to hear from you.
+      </p>
+    </header>
+
+    <div class="grid gap-8">
+      <!-- Email -->
+      <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+        <h2 class="font-semibold text-gold mb-2">Email</h2>
+        <p class="text-sm text-text-secondary mb-3">
+          For general enquiries, data corrections, or feedback:
+        </p>
+        <a
+          href="mailto:hello@card.oriz.in"
+          class="text-text-primary hover:text-gold transition-colors font-medium"
+        >
+          hello@card.oriz.in
+        </a>
+      </div>
+
+      <!-- Partnerships -->
+      <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+        <h2 class="font-semibold text-gold mb-2">Partnerships</h2>
+        <p class="text-sm text-text-secondary mb-3">
+          Interested in collaborating or integrating our data? Reach out to:
+        </p>
+        <a
+          href="mailto:partnerships@card.oriz.in"
+          class="text-text-primary hover:text-gold transition-colors font-medium"
+        >
+          partnerships@card.oriz.in
+        </a>
+      </div>
+
+      <!-- Data Corrections -->
+      <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+        <h2 class="font-semibold text-gold mb-2">Report a Data Error</h2>
+        <p class="text-sm text-text-secondary mb-3">
+          Found incorrect card information? Help us keep our database accurate:
+        </p>
+        <a
+          href="mailto:corrections@card.oriz.in"
+          class="text-text-primary hover:text-gold transition-colors font-medium"
+        >
+          corrections@card.oriz.in
+        </a>
+      </div>
+
+      <!-- Social -->
+      <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+        <h2 class="font-semibold text-gold mb-4">Follow Us</h2>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="https://twitter.com/cardorizin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 rounded-lg border border-border-default text-text-secondary hover:border-gold hover:text-gold transition-colors text-sm"
+          >
+            Twitter / X
+          </a>
+          <a
+            href="https://github.com/cardorizin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 rounded-lg border border-border-default text-text-secondary hover:border-gold hover:text-gold transition-colors text-sm"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

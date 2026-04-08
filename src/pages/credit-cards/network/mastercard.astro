@@ -1,0 +1,52 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { CREDIT_CARDS } from "@/data/index";
+import { getCardUrl } from "@/lib/utils";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const cards = CREDIT_CARDS.filter((c) => c.network === "Mastercard");
+
+const title = "Mastercard Credit Cards India 2026 | card.oriz.in";
+const description = `Browse ${cards.length} Mastercard credit cards in India. Compare rewards, fees, and benefits across all banks.`;
+
+const jsonLd = generateItemListJsonLd(
+  "Mastercard Credit Cards",
+  cards.map((card) => ({
+    name: card.name,
+    url: `https://card.oriz.in${getCardUrl(card)}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/credit-cards" class="hover:text-gold transition-colors">Credit Cards</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Mastercard</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Mastercard Credit Cards
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        {cards.length} Mastercard network credit cards available in India. Mastercard provides extensive global coverage with premium Priceless experiences and travel benefits.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {cards.map((card) => (
+          <CardThumbnail card={card} showCompare={false} client:load />
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

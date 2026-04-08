@@ -1,0 +1,46 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist."
+>
+  <section class="mx-auto max-w-3xl px-4 py-24 text-center">
+    <!-- Card-themed 404 -->
+    <div class="mb-10">
+      <div class="inline-flex items-center justify-center w-48 h-32 rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default shadow-xl">
+        <div class="text-center">
+          <div class="text-5xl font-display font-bold text-gold">404</div>
+          <div class="mt-1 text-xs text-text-tertiary uppercase tracking-widest">Card Declined</div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+      This page was not found
+    </h1>
+    <p class="text-lg text-text-secondary max-w-md mx-auto mb-10">
+      Looks like this card got lost in the swipe. The page you're looking for doesn't exist or may have been moved.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="/"
+        class="px-6 py-3 bg-gold text-bg-primary font-semibold rounded-xl hover:bg-gold-2 transition-all duration-200 shadow-lg shadow-gold/20"
+      >
+        Go Back Home
+      </a>
+      <a
+        href="/credit-cards"
+        class="px-6 py-3 border border-border-bright text-text-primary font-semibold rounded-xl hover:border-gold hover:text-gold transition-all duration-200"
+      >
+        Browse Cards
+      </a>
+    </div>
+
+    <div class="mt-12 text-sm text-text-tertiary">
+      <p>Looking for something specific? Try the <a href="/sitemap" class="text-gold hover:text-gold-2 transition-colors">sitemap</a>.</p>
+    </div>
+  </section>
+</PageLayout>

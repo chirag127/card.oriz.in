@@ -1,0 +1,51 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+
+const title = "My Account | card.oriz.in";
+const description = "Manage your card.oriz.in account, wishlist, and saved comparisons.";
+---
+
+<PageLayout title={title} description={description}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Account</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        My Account
+      </h1>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="mx-auto max-w-md px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-bg-tertiary flex items-center justify-center">
+        <span class="text-2xl text-text-secondary">?</span>
+      </div>
+      <h2 class="font-display text-xl font-bold text-text-primary">
+        Sign in to access your account
+      </h2>
+      <p class="mt-3 text-text-secondary">
+        Create a free account to save cards to your wishlist, track comparisons, and get personalized recommendations.
+      </p>
+      <div class="mt-8 flex flex-col gap-3">
+        <a
+          href="/account/wishlist"
+          class="px-6 py-3 border border-border-default text-text-primary rounded-xl hover:border-gold/30 transition-colors"
+        >
+          View Wishlist
+        </a>
+        <a
+          href="/account/comparisons"
+          class="px-6 py-3 border border-border-default text-text-primary rounded-xl hover:border-gold/30 transition-colors"
+        >
+          Saved Comparisons
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

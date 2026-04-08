@@ -1,0 +1,260 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { getCardById, CREDIT_CARDS } from "@/data/index";
+import { formatINRFull, formatPercent } from "@/lib/formatters";
+import { getAnnualFee, getJoiningFee } from "@/lib/utils";
+import type { CardData } from "@/types/card";
+
+export function getStaticPaths() {
+  const pairs = [
+    ["hdfc-regalia-credit-card", "sbi-elite-credit-card"],
+    ["hdfc-infinia-credit-card", "axis-magnus-credit-card"],
+    ["icici-sapphiro-credit-card", "kotak-royale-signature-credit-card"],
+    ["amex-gold-credit-card", "hsbc-premier-credit-card"],
+    ["idfc-first-wealth-credit-card", "hdfc-millennia-credit-card"],
+    ["sbi-cashback-credit-card", "axis-ace-credit-card"],
+  ];
+
+  return pairs.map(([a, b]) => ({
+    params: { cards: `${a}-vs-${b}` },
+    props: { cardAId: a, cardBId: b },
+  }));
+}
+
+interface Props {
+  cardAId: string;
+  cardBId: string;
+}
+
+const { cardAId, cardBId } = Astro.props;
+const cardA = getCardById(cardAId);
+const cardB = getCardById(cardBId);
+
+if (!cardA || !cardB) {
+  return Astro.redirect("/compare");
+}
+
+function getForexMarkup(card: CardData): number {
+  return card.transactionCharges.currencyMarkupPercent;
+}
+
+function getRewardRate(card: CardData): number {
+  return card.rewardProgram?.effectiveCashbackPercent ?? 0;
+}
+
+function getKeyBenefits(card: CardData): string[] {
+  return card.benefits.slice(0, 5).map((b) => b.title);
+}
+
+const rows = [
+  {
+    label: "Annual Fee",
+    valueA: getAnnualFee(cardA),
+    valueB: getAnnualFee(cardB),
+    format: (v: number) => (v === 0 ? "Free" : formatINRFull(v)),
+    lowerBetter: true,
+  },
+  {
+    label: "Joining Fee",
+    valueA: getJoiningFee(cardA),
+    valueB: getJoiningFee(cardB),
+    format: (v: number) => (v === 0 ? "Free" : formatINRFull(v)),
+    lowerBetter: true,
+  },
+  {
+    label: "Effective Reward Rate",
+    valueA: getRewardRate(cardA),
+    valueB: getRewardRate(cardB),
+    format: (v: number) => formatPercent(v),
+    lowerBetter: false,
+  },
+  {
+    label: "Forex Markup",
+    valueA: getForexMarkup(cardA),
+    valueB: getForexMarkup(cardB),
+    format: (v: number) => formatPercent(v),
+    lowerBetter: true,
+  },
+  {
+    label: "Avg Annual Value",
+    valueA: cardA.value.averageValue,
+    valueB: cardB.value.averageValue,
+    format: (v: number) => formatINRFull(v),
+    lowerBetter: false,
+  },
+  {
+    label: "Annual Net Value",
+    valueA: cardA.value.annualNetValue,
+    valueB: cardB.value.annualNetValue,
+    format: (v: number) => formatINRFull(v),
+    lowerBetter: false,
+  },
+];
+
+function getHighlightClass(
+  valA: number,
+  valB: number,
+  lowerBetter: boolean
+): { classA: string; classB: string } {
+  if (valA === valB) return { classA: "", classB: "" };
+  if (lowerBetter) {
+    return valA < valB
+      ? { classA: "text-emerald-card font-semibold", classB: "text-rose-card" }
+      : { classA: "text-rose-card", classB: "text-emerald-card font-semibold" };
+  }
+  return valA > valB
+    ? { classA: "text-emerald-card font-semibold", classB: "text-rose-card" }
+    : { classA: "text-rose-card", classB: "text-emerald-card font-semibold" };
+}
+
+const benefitsA = getKeyBenefits(cardA);
+const benefitsB = getKeyBenefits(cardB);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `${cardA.name} vs ${cardB.name} Comparison`,
+  description: `Compare ${cardA.name} and ${cardB.name} side by side — fees, rewards, benefits, and value.`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Product",
+        name: cardA.name,
+        description: cardA.tagline,
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Product",
+        name: cardB.name,
+        description: cardB.tagline,
+      },
+    },
+  ],
+};
+---
+
+<PageLayout
+  title={`${cardA.name} vs ${cardB.name} — Comparison`}
+  description={`Compare ${cardA.name} and ${cardB.name} side by side. Fees, rewards, benefits, and value metrics compared.`}
+  jsonLd={jsonLd}
+>
+  <section class="py-12 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+          {cardA.name} <span class="text-gold">vs</span> {cardB.name}
+        </h1>
+        <p class="mt-3 text-text-secondary">
+          Side-by-side comparison of fees, rewards, and benefits
+        </p>
+      </div>
+
+      <!-- Card Headers -->
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <div></div>
+        <a
+          href={`/credit-cards/${cardA.id}`}
+          class="group text-center p-4 rounded-xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default hover:border-gold/30 transition-all"
+        >
+          <div
+            class="w-full aspect-[1.586/1] rounded-xl flex items-center justify-center mb-3"
+            style={`background: linear-gradient(135deg, ${cardA.gradientColors[0]}, ${cardA.gradientColors[1]})`}
+          >
+            <span class="text-white/80 font-display text-sm font-bold">{cardA.bank}</span>
+          </div>
+          <h2 class="font-semibold text-sm text-text-primary group-hover:text-gold transition-colors">
+            {cardA.name}
+          </h2>
+          <p class="text-xs text-text-tertiary mt-1">{cardA.bank} · {cardA.network} · {cardA.tier}</p>
+        </a>
+        <a
+          href={`/credit-cards/${cardB.id}`}
+          class="group text-center p-4 rounded-xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default hover:border-gold/30 transition-all"
+        >
+          <div
+            class="w-full aspect-[1.586/1] rounded-xl flex items-center justify-center mb-3"
+            style={`background: linear-gradient(135deg, ${cardB.gradientColors[0]}, ${cardB.gradientColors[1]})`}
+          >
+            <span class="text-white/80 font-display text-sm font-bold">{cardB.bank}</span>
+          </div>
+          <h2 class="font-semibold text-sm text-text-primary group-hover:text-gold transition-colors">
+            {cardB.name}
+          </h2>
+          <p class="text-xs text-text-tertiary mt-1">{cardB.bank} · {cardB.network} · {cardB.tier}</p>
+        </a>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="rounded-2xl border border-border-default overflow-hidden">
+        <!-- Table Header -->
+        <div class="grid grid-cols-3 bg-bg-secondary border-b border-border-default">
+          <div class="p-4 text-sm font-semibold text-text-secondary">Metric</div>
+          <div class="p-4 text-sm font-semibold text-text-primary text-center">{cardA.bank}</div>
+          <div class="p-4 text-sm font-semibold text-text-primary text-center">{cardB.bank}</div>
+        </div>
+
+        <!-- Rows -->
+        {rows.map((row, i) => {
+          const hl = getHighlightClass(row.valueA, row.valueB, row.lowerBetter);
+          return (
+            <div class={`grid grid-cols-3 ${i % 2 === 0 ? "bg-bg-primary" : "bg-bg-secondary/30"} border-b border-border-default last:border-b-0`}>
+              <div class="p-4 text-sm text-text-secondary">{row.label}</div>
+              <div class={`p-4 text-sm text-center ${hl.classA}`}>{row.format(row.valueA)}</div>
+              <div class={`p-4 text-sm text-center ${hl.classB}`}>{row.format(row.valueB)}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Key Benefits -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div class="rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default p-6">
+          <h3 class="font-semibold text-text-primary mb-4">
+            {cardA.name} — Key Benefits
+          </h3>
+          <ul class="space-y-2">
+            {benefitsA.length > 0 ? benefitsA.map((b) => (
+              <li class="text-sm text-text-secondary flex items-start gap-2">
+                <span class="text-gold mt-0.5">✓</span>
+                {b}
+              </li>
+            )) : (
+              <li class="text-sm text-text-tertiary">No key benefits listed</li>
+            )}
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default p-6">
+          <h3 class="font-semibold text-text-primary mb-4">
+            {cardB.name} — Key Benefits
+          </h3>
+          <ul class="space-y-2">
+            {benefitsB.length > 0 ? benefitsB.map((b) => (
+              <li class="text-sm text-text-secondary flex items-start gap-2">
+                <span class="text-gold mt-0.5">✓</span>
+                {b}
+              </li>
+            )) : (
+              <li class="text-sm text-text-tertiary">No key benefits listed</li>
+            )}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Back to comparisons -->
+      <div class="mt-12 text-center">
+        <a
+          href="/compare"
+          class="text-sm text-gold hover:text-gold-2 transition-colors"
+        >
+          ← Back to all comparisons
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

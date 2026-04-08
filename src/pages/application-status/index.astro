@@ -1,0 +1,81 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { ALL_BANKS } from "@/data/banks-index";
+
+const title = "Check Card Application Status 2026 | card.oriz.in";
+const description = "Track your credit card, debit card, or prepaid card application status across all major Indian banks. Direct links to bank status trackers.";
+
+const processingTimes = [
+  { type: "Credit Card", time: "5–15 business days" },
+  { type: "Debit Card", time: "3–7 business days" },
+  { type: "Prepaid Card", time: "1–3 business days" },
+  { type: "Metal Card", time: "10–21 business days" },
+];
+---
+
+<PageLayout title={title} description={description}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Application Status</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Card Application Status
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        Track your card application by visiting your bank's official status page. You'll typically need your application reference number or registered mobile number.
+      </p>
+    </div>
+  </section>
+
+  <!-- Processing Times -->
+  <section class="py-8 bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-xl font-bold text-text-primary mb-4">Typical Processing Times</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {processingTimes.map((pt) => (
+          <div class="p-4 rounded-xl bg-bg-secondary border border-border-default text-center">
+            <p class="text-sm font-medium text-text-primary">{pt.type}</p>
+            <p class="mt-1 text-xs text-gold">{pt.time}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bank Status Links -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-xl font-bold text-text-primary mb-6">Check Status by Bank</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {ALL_BANKS.filter((b) => b.applicationStatusUrl).map((bank) => (
+          <a
+            href={bank.applicationStatusUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 p-4 rounded-xl bg-bg-secondary border border-border-default hover:border-gold/30 transition-all duration-200"
+          >
+            <div class="w-10 h-10 rounded-full bg-bg-tertiary flex items-center justify-center flex-shrink-0">
+              <span class="text-xs font-bold text-text-secondary group-hover:text-gold transition-colors">
+                {bank.shortName.slice(0, 2)}
+              </span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-medium text-text-primary group-hover:text-gold transition-colors truncate">
+                {bank.name}
+              </h3>
+              <p class="text-xs text-text-tertiary truncate">
+                {bank.customerCareNumber && `Call: ${bank.customerCareNumber}`}
+              </p>
+            </div>
+            <span class="text-xs text-gold flex-shrink-0">Track ↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

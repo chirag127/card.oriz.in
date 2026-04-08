@@ -1,0 +1,65 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { DEBIT_CARDS } from "@/data/index";
+import { getCardUrl } from "@/lib/utils";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const title = "Best Debit Cards in India 2026 by Category | card.oriz.in";
+const description = "Find the best debit cards in India for cashback, international use, and premium benefits. Curated rankings updated regularly.";
+
+const categories = [
+  { label: "Best Cashback Debit Cards", href: "/debit-cards/best/cashback", icon: "CB", description: "Earn cashback on debit card purchases" },
+  { label: "Best International Debit Cards", href: "/debit-cards/best/international", icon: "IN", description: "Low forex markup and global acceptance" },
+  { label: "Best Premium Debit Cards", href: "/debit-cards/best/premium", icon: "PR", description: "High limits, lounge access, and exclusive perks" },
+];
+
+const jsonLd = generateItemListJsonLd(
+  "Best Debit Cards by Category",
+  categories.map((c) => ({ name: c.label, url: `https://card.oriz.in${c.href}` }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/debit-cards" class="hover:text-gold transition-colors">Debit Cards</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Best Of</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Best Debit Cards by Category
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        Our curated picks for the best debit cards across different use cases. Find the right card for cashback, international transactions, or premium banking.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={cat.href}
+            class="group p-6 rounded-xl bg-bg-secondary border border-border-default hover:border-gold/30 hover:shadow-lg hover:shadow-black/20 transition-all duration-200"
+          >
+            <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+              <span class="text-sm font-bold text-gold">{cat.icon}</span>
+            </div>
+            <h2 class="font-display text-lg font-semibold text-text-primary group-hover:text-gold transition-colors">
+              {cat.label}
+            </h2>
+            <p class="mt-2 text-sm text-text-secondary">{cat.description}</p>
+            <span class="mt-4 inline-block text-sm text-gold">View cards →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

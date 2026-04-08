@@ -1,0 +1,58 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { getBestCards } from "@/data/index";
+import { getCardUrl } from "@/lib/utils";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const cards = getBestCards("no-annual-fee", 10);
+
+const title = "Best No Annual Fee Credit Cards India 2026 | card.oriz.in";
+const description = "Credit cards with zero annual fees in India. Get rewards, cashback, and benefits without paying any yearly charges.";
+
+const jsonLd = generateItemListJsonLd(
+  "Best No Annual Fee Credit Cards",
+  cards.map((card) => ({
+    name: card.name,
+    url: `https://card.oriz.in${getCardUrl(card)}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/credit-cards" class="hover:text-gold transition-colors">Credit Cards</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/credit-cards/best" class="hover:text-gold transition-colors">Best Of</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">No Annual Fee</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Best No Annual Fee Credit Cards
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        Great credit cards that don't charge a yearly fee. Enjoy rewards, cashback, and perks without the burden of annual charges. Ideal for first-time card users and cost-conscious spenders.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {cards.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {cards.map((card) => (
+            <CardThumbnail card={card} showCompare={false} client:load />
+          ))}
+        </div>
+      ) : (
+        <p class="text-text-secondary">No cards with zero annual fee found in our database.</p>
+      )}
+    </div>
+  </section>
+</PageLayout>

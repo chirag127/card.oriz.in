@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-2: #E8C97A;
+  --color-emerald-card: #2DD4A0;
+  --color-rose-card: #FF6B8A;
+  --color-blue-card: #4F9EFF;
+
+  --color-bg-primary: #0A0A0F;
+  --color-bg-secondary: #111118;
+  --color-bg-tertiary: #1A1A24;
+  --color-bg-elevated: #22222E;
+
+  --color-border-default: #2A2A3A;
+  --color-border-bright: #3A3A50;
+
+  --color-text-primary: #F0F0F8;
+  --color-text-secondary: #A0A0B8;
+  --color-text-tertiary: #606078;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Dark mode (default) */
+:root {
+  --c-bg-primary: #0A0A0F;
+  --c-bg-secondary: #111118;
+  --c-bg-tertiary: #1A1A24;
+  --c-bg-elevated: #22222E;
+  --c-border: #2A2A3A;
+  --c-border-bright: #3A3A50;
+  --c-accent-gold: #C9A84C;
+  --c-accent-gold-2: #E8C97A;
+  --c-accent-blue: #4F9EFF;
+  --c-accent-emerald: #2DD4A0;
+  --c-accent-rose: #FF6B8A;
+  --c-text-primary: #F0F0F8;
+  --c-text-secondary: #A0A0B8;
+  --c-text-tertiary: #606078;
+  --c-visa: #1A1F71;
+  --c-mc-r: #EB001B;
+  --c-mc-o: #F79E1B;
+  --c-rupay: #FF6600;
+  --c-amex: #2E77BC;
+  --c-diners: #004A97;
+}
+
+[data-theme="light"] {
+  --c-bg-primary: #F8F8FC;
+  --c-bg-secondary: #FFFFFF;
+  --c-bg-tertiary: #F0F0F8;
+  --c-bg-elevated: #E8E8F4;
+  --c-border: #D8D8E8;
+  --c-border-bright: #C0C0D8;
+  --c-text-primary: #0A0A1A;
+  --c-text-secondary: #404058;
+  --c-text-tertiary: #808098;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--c-bg-primary);
+  color: var(--c-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--c-accent-blue);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: var(--c-accent-gold);
+}
+
+::selection {
+  background-color: rgba(201, 168, 76, 0.3);
+  color: var(--c-text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-accent-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--c-accent-gold);
+  color: #000;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-border-bright);
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--c-bg-tertiary) 25%,
+    var(--c-bg-elevated) 50%,
+    var(--c-bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Staggered animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(17, 17, 24, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--c-border);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.85);
+}

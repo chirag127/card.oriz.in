@@ -1,0 +1,75 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { ALL_BANKS } from "@/data/banks-index";
+import { getCardsByBank } from "@/data/index";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const title = "All Card Issuers in India 2026 | card.oriz.in";
+const description = `Browse cards from ${ALL_BANKS.length} Indian banks and card issuers. Compare HDFC, SBI, ICICI, Axis, and more.`;
+
+const jsonLd = generateItemListJsonLd(
+  "All Card Issuers in India",
+  ALL_BANKS.map((bank) => ({
+    name: bank.name,
+    url: `https://card.oriz.in/issuers/${bank.id}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Issuers</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        All Card Issuers
+      </h1>
+      <p class="mt-2 text-text-secondary">
+        {ALL_BANKS.length} banks and financial institutions issuing cards in India
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ALL_BANKS.map((bank) => {
+          const cards = getCardsByBank(bank.id);
+          return (
+            <a
+              href={`/issuers/${bank.id}`}
+              class="group flex flex-col p-6 rounded-xl bg-bg-secondary border border-border-default hover:border-gold/30 hover:shadow-lg hover:shadow-black/20 transition-all duration-200"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-bg-tertiary flex items-center justify-center flex-shrink-0">
+                  <span class="text-sm font-bold text-text-secondary group-hover:text-gold transition-colors">
+                    {bank.shortName.slice(0, 2)}
+                  </span>
+                </div>
+                <div class="min-w-0">
+                  <h2 class="font-semibold text-text-primary group-hover:text-gold transition-colors truncate">
+                    {bank.name}
+                  </h2>
+                  <p class="text-xs text-text-tertiary">{bank.shortName}</p>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-bg-tertiary text-text-secondary">
+                  {bank.category}
+                </span>
+                <span class="text-xs text-text-tertiary">
+                  {cards.length} {cards.length === 1 ? "card" : "cards"}
+                </span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</PageLayout>

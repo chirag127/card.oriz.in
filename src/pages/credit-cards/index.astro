@@ -1,0 +1,51 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { CREDIT_CARDS } from "@/data/index";
+import { getAnnualFee, getCardUrl } from "@/lib/utils";
+import { formatINR } from "@/lib/formatters";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const title = "All Credit Cards in India 2026 | card.oriz.in";
+const description = `Browse ${CREDIT_CARDS.length} credit cards from top Indian banks. Compare rewards, fees, benefits, and apply online.`;
+
+const jsonLd = generateItemListJsonLd(
+  "All Credit Cards in India",
+  CREDIT_CARDS.map((card) => ({
+    name: card.name,
+    url: `https://card.oriz.in${getCardUrl(card)}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <!-- Header -->
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Credit Cards</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        All Credit Cards
+      </h1>
+      <p class="mt-2 text-text-secondary">
+        {CREDIT_CARDS.length} credit cards from top Indian banks
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Card Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {CREDIT_CARDS.map((card) => (
+          <CardThumbnail card={card} showCompare={false} client:load />
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

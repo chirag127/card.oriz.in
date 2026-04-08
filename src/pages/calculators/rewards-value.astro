@@ -1,0 +1,25 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import RewardsCalculator from "@/components/calculators/RewardsCalculator";
+import { CREDIT_CARDS } from "@/data/index";
+---
+
+<PageLayout
+  title="Rewards Value Calculator"
+  description="Enter your monthly spend by category and see how much each credit card earns you. Compare annual rewards value across 300+ cards."
+>
+  <section class="py-12 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+          Rewards <span class="text-gold">Value Calculator</span>
+        </h1>
+        <p class="mt-4 text-text-secondary max-w-xl mx-auto">
+          Enter your monthly spend across categories to see how much value each card delivers. Find the best card for your lifestyle.
+        </p>
+      </div>
+
+      <RewardsCalculator client:visible allCards={CREDIT_CARDS} />
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,33 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import SearchResults from "@/components/filters/SearchResults";
+
+const title = "Search Cards | card.oriz.in";
+const description = "Search across 40+ credit, debit, and prepaid cards by name, bank, or network.";
+---
+
+<PageLayout title={title} description={description}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">Search</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Search Cards
+      </h1>
+      <p class="mt-2 text-text-secondary">
+        Find the right card by name, bank, or network
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SearchResults client:load />
+    </div>
+  </section>
+</PageLayout>

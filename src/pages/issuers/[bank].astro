@@ -1,0 +1,96 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { ALL_BANKS, getBankById } from "@/data/banks-index";
+import { getCardsByBank } from "@/data/index";
+import { getCardUrl } from "@/lib/utils";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+export function getStaticPaths() {
+  return ALL_BANKS.map((bank) => ({
+    params: { bank: bank.id },
+  }));
+}
+
+const { bank: bankId } = Astro.params;
+const bank = getBankById(bankId!);
+
+if (!bank) {
+  return Astro.redirect("/issuers");
+}
+
+const cards = getCardsByBank(bank.id);
+
+const title = `${bank.name} Cards 2026 | Credit, Debit & Prepaid | card.oriz.in`;
+const description = `Browse all ${cards.length} cards from ${bank.name}. ${bank.description?.slice(0, 120)}`;
+
+const jsonLd = generateItemListJsonLd(
+  `${bank.name} Cards`,
+  cards.map((card) => ({
+    name: card.name,
+    url: `https://card.oriz.in${getCardUrl(card)}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/issuers" class="hover:text-gold transition-colors">Issuers</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">{bank.name}</li>
+        </ol>
+      </nav>
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-xl bg-bg-tertiary flex items-center justify-center flex-shrink-0">
+          <span class="text-lg font-bold text-text-secondary">{bank.shortName.slice(0, 2)}</span>
+        </div>
+        <div>
+          <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+            {bank.name}
+          </h1>
+          <p class="mt-2 text-text-secondary max-w-2xl">{bank.description}</p>
+          <div class="mt-4 flex flex-wrap items-center gap-4 text-sm">
+            <a
+              href={bank.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gold hover:text-gold-2 transition-colors"
+            >
+              Visit Website ↗
+            </a>
+            {bank.customerCareNumber && (
+              <span class="text-text-tertiary">
+                Customer Care: <span class="text-text-secondary">{bank.customerCareNumber}</span>
+              </span>
+            )}
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-bg-tertiary text-text-secondary">
+              {bank.category}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-xl font-bold text-text-primary mb-6">
+        All Cards ({cards.length})
+      </h2>
+      {cards.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {cards.map((card) => (
+            <CardThumbnail card={card} showCompare={false} client:load />
+          ))}
+        </div>
+      ) : (
+        <p class="text-text-secondary">No cards found for this issuer.</p>
+      )}
+    </div>
+  </section>
+</PageLayout>

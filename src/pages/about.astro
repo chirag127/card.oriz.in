@@ -1,0 +1,102 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { ALL_CARDS } from "@/data/index";
+
+const totalCards = ALL_CARDS.length;
+---
+
+<PageLayout
+  title="About"
+  description="Learn about card.oriz.in — India's most comprehensive card intelligence platform. Our mission, methodology, and what makes us different."
+>
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <header class="mb-12">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary">
+        About card<span class="text-gold">.</span>oriz<span class="text-gold">.</span>in
+      </h1>
+    </header>
+
+    <!-- Mission -->
+    <div class="space-y-6 mb-16">
+      <p class="text-lg text-text-secondary leading-relaxed">
+        We're building India's most intelligent card comparison platform. Our goal is simple: help you find the perfect credit, debit, or prepaid card based on your actual spending habits — not marketing hype.
+      </p>
+      <p class="text-text-secondary leading-relaxed">
+        With {totalCards}+ cards from {ALL_CARDS.filter((c, i, arr) => arr.findIndex(x => x.bankCode === c.bankCode) === i).length}+ banks in our database, we provide the most comprehensive and data-driven card comparison experience in India.
+      </p>
+    </div>
+
+    <!-- What Makes Us Different -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-bold text-text-primary mb-8">
+        What Makes Us Different
+      </h2>
+      <div class="grid gap-6">
+        <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+          <h3 class="font-semibold text-gold mb-2">Data-Driven, Not Paid</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">
+            Our rankings and recommendations are based purely on data — reward rates, benefit values, fee structures. We don't accept payments from banks to rank their cards higher. Ever.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+          <h3 class="font-semibold text-gold mb-2">AI-Powered Recommendations</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">
+            Our Card Genie tool analyses your spending pattern and recommends the card that maximises your specific rewards. No generic "best card" lists — personalised answers for your lifestyle.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+          <h3 class="font-semibold text-gold mb-2">Verified & Updated Daily</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">
+            Every card's fees, benefits, and terms are sourced from official bank websites and verified by our team. We track changes and update our database daily.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-bg-secondary border border-border-default">
+          <h3 class="font-semibold text-gold mb-2">True Value Calculations</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">
+            We calculate the real monetary value of every benefit — not just listing features. You'll see exactly how much each card is worth based on your spending, including net annual value after fees.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Methodology -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-bold text-text-primary mb-8">
+        Our Data Methodology
+      </h2>
+      <div class="space-y-4 text-text-secondary leading-relaxed">
+        <p>
+          <strong class="text-text-primary">1. Collection</strong> — Our team manually reviews official bank websites, product brochures, and terms & conditions to extract card data.
+        </p>
+        <p>
+          <strong class="text-text-primary">2. Verification</strong> — Each data point is cross-checked against multiple sources. Cards marked as "verified" have all fields confirmed.
+        </p>
+        <p>
+          <strong class="text-text-primary">3. Valuation</strong> — We assign monetary values to every benefit using standardised assumptions. Lounge access is valued at ₹1,500 (domestic) and ₹3,000 (international). Reward points are valued at the best available redemption rate.
+        </p>
+        <p>
+          <strong class="text-text-primary">4. Ranking</strong> — Cards are ranked by net annual value (total benefits minus total charges) for a standardised spending profile. Category-specific rankings use weighted spending patterns.
+        </p>
+        <p>
+          <strong class="text-text-primary">5. Monitoring</strong> — We track changes to fees, benefits, and terms daily. When a bank updates a card, our database reflects the change within 24 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="p-8 rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default">
+      <h2 class="font-display text-xl font-bold text-text-primary mb-3">
+        Questions or Feedback?
+      </h2>
+      <p class="text-sm text-text-secondary mb-6">
+        We'd love to hear from you. Whether you've spotted an error in our data or have a feature suggestion, get in touch.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 bg-gold text-bg-primary font-semibold rounded-xl hover:bg-gold-2 transition-colors"
+      >
+        Contact Us
+      </a>
+    </section>
+  </section>
+</PageLayout>

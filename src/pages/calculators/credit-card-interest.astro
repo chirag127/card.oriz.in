@@ -1,0 +1,44 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import InterestCalculator from "@/components/calculators/InterestCalculator";
+---
+
+<PageLayout
+  title="Credit Card Interest Calculator"
+  description="Calculate how long it takes to pay off your credit card balance and how much total interest you'll pay. Free online calculator."
+>
+  <section class="py-12 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+          Credit Card <span class="text-gold">Interest Calculator</span>
+        </h1>
+        <p class="mt-4 text-text-secondary max-w-xl mx-auto">
+          Enter your outstanding balance, interest rate, and monthly payment to see how long it takes to become debt-free.
+        </p>
+      </div>
+
+      <InterestCalculator client:load />
+
+      <div class="mt-10 max-w-2xl mx-auto">
+        <div class="rounded-2xl bg-bg-secondary/50 border border-border-default p-6">
+          <h3 className="font-semibold text-text-primary mb-3">How it works</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">•</span>
+              Credit card interest compounds monthly on your outstanding balance.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">•</span>
+              Paying only the minimum due can take years to clear even small balances.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-0.5">•</span>
+              Increasing your monthly payment significantly reduces both time and total interest.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

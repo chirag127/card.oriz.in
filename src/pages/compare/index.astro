@@ -1,0 +1,142 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { getCardById } from "@/data/index";
+
+const comparisons = [
+  { a: "hdfc-regalia-credit-card", b: "sbi-elite-credit-card" },
+  { a: "hdfc-infinia-credit-card", b: "axis-magnus-credit-card" },
+  { a: "icici-sapphiro-credit-card", b: "kotak-royale-signature-credit-card" },
+  { a: "amex-gold-credit-card", b: "hsbc-premier-credit-card" },
+  { a: "idfc-first-wealth-credit-card", b: "hdfc-millennia-credit-card" },
+  { a: "sbi-cashback-credit-card", b: "axis-ace-credit-card" },
+];
+
+const popularComparisons = comparisons
+  .map(({ a, b }) => {
+    const cardA = getCardById(a);
+    const cardB = getCardById(b);
+    if (!cardA || !cardB) return null;
+    return {
+      slug: `${a}-vs-${b}`,
+      cardA,
+      cardB,
+    };
+  })
+  .filter(Boolean);
+---
+
+<PageLayout
+  title="Compare Credit Cards Side by Side"
+  description="Compare credit cards from top Indian banks side by side. Check fees, rewards, benefits, and value metrics to find the best card for your needs."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 lg:py-28">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-tertiary"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-text-primary leading-tight">
+          Compare Cards<br />
+          <span class="text-gold">Side by Side</span>
+        </h1>
+        <p class="mt-6 text-lg text-text-secondary max-w-2xl mx-auto">
+          Pick any two cards and see how they stack up across fees, rewards, benefits, and value. Data-driven comparisons to help you choose the right card.
+        </p>
+        <div class="mt-8">
+          <a
+            href="/credit-cards"
+            class="inline-flex items-center justify-center px-6 py-3 bg-gold text-bg-primary font-semibold rounded-xl hover:bg-gold-2 transition-colors shadow-lg shadow-gold/20"
+          >
+            Browse All Cards to Compare
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Comparisons -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
+        Popular Comparisons
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {popularComparisons.map((comp) => (
+          <a
+            href={`/compare/${comp!.slug}`}
+            class="group relative rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-tertiary border border-border-default hover:border-gold/30 p-6 transition-all duration-200 hover:shadow-xl hover:shadow-black/20"
+          >
+            <div class="flex items-center gap-4">
+              <!-- Card A -->
+              <div class="flex-1 text-center">
+                <div
+                  class="w-full aspect-[1.586/1] rounded-xl flex items-center justify-center mb-3"
+                  style={`background: linear-gradient(135deg, ${comp!.cardA.gradientColors[0]}, ${comp!.cardA.gradientColors[1]})`}
+                >
+                  <span class="text-white/80 font-display text-sm font-bold">{comp!.cardA.bank}</span>
+                </div>
+                <p class="text-xs font-medium text-text-primary line-clamp-2">{comp!.cardA.name}</p>
+              </div>
+
+              <!-- VS -->
+              <div class="shrink-0 w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                <span class="text-xs font-bold text-gold">VS</span>
+              </div>
+
+              <!-- Card B -->
+              <div class="flex-1 text-center">
+                <div
+                  class="w-full aspect-[1.586/1] rounded-xl flex items-center justify-center mb-3"
+                  style={`background: linear-gradient(135deg, ${comp!.cardB.gradientColors[0]}, ${comp!.cardB.gradientColors[1]})`}
+                >
+                  <span class="text-white/80 font-display text-sm font-bold">{comp!.cardB.bank}</span>
+                </div>
+                <p class="text-xs font-medium text-text-primary line-clamp-2">{comp!.cardB.name}</p>
+              </div>
+            </div>
+
+            <div class="mt-4 text-center">
+              <span class="text-xs text-gold group-hover:text-gold-2 transition-colors">
+                View Comparison →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-text-primary text-center mb-12">
+        How Comparison Works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <span class="text-gold font-bold">1</span>
+          </div>
+          <h3 class="font-semibold text-text-primary mb-2">Pick Two Cards</h3>
+          <p class="text-sm text-text-secondary">Choose from our database of 300+ cards across all major Indian banks.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <span class="text-gold font-bold">2</span>
+          </div>
+          <h3 class="font-semibold text-text-primary mb-2">See Side-by-Side Data</h3>
+          <p class="text-sm text-text-secondary">Fees, rewards, benefits, and value metrics compared in a clear table.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <span class="text-gold font-bold">3</span>
+          </div>
+          <h3 class="font-semibold text-text-primary mb-2">Make the Right Choice</h3>
+          <p class="text-sm text-text-secondary">Best values highlighted so you can pick the card that saves you the most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

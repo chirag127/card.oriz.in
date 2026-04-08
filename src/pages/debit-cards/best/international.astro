@@ -1,0 +1,61 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import CardThumbnail from "@/components/cards/CardThumbnail.tsx";
+import { DEBIT_CARDS } from "@/data/index";
+import { getCardUrl } from "@/lib/utils";
+import { generateItemListJsonLd } from "@/lib/seo";
+
+const cards = DEBIT_CARDS
+  .filter((c) => c.usage === "International" || c.usage === "Global")
+  .sort((a, b) => b.value.averageValue - a.value.averageValue)
+  .slice(0, 10);
+
+const title = "Best International Debit Cards India 2026 | card.oriz.in";
+const description = "Top debit cards for international transactions with low forex markup, global ATM access, and worldwide acceptance.";
+
+const jsonLd = generateItemListJsonLd(
+  "Best International Debit Cards",
+  cards.map((card) => ({
+    name: card.name,
+    url: `https://card.oriz.in${getCardUrl(card)}`,
+  }))
+);
+---
+
+<PageLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="border-b border-border-default bg-bg-secondary/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <nav class="mb-6 text-sm text-text-tertiary" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/debit-cards" class="hover:text-gold transition-colors">Debit Cards</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li><a href="/debit-cards/best" class="hover:text-gold transition-colors">Best Of</a></li>
+          <li class="text-text-tertiary">/</li>
+          <li class="text-text-primary font-medium">International</li>
+        </ol>
+      </nav>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-text-primary">
+        Best International Debit Cards
+      </h1>
+      <p class="mt-2 text-text-secondary max-w-2xl">
+        Travel abroad and shop online internationally with debit cards that offer low currency conversion markups, global ATM withdrawals, and worldwide merchant acceptance.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {cards.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {cards.map((card) => (
+            <CardThumbnail card={card} showCompare={false} client:load />
+          ))}
+        </div>
+      ) : (
+        <p class="text-text-secondary">No international debit cards found.</p>
+      )}
+    </div>
+  </section>
+</PageLayout>

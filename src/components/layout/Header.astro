@@ -1,0 +1,122 @@
+---
+import ThemeToggle from "./ThemeToggle.tsx";
+import MobileNav from "./MobileNav.tsx";
+import SearchBar from "./SearchBar.tsx";
+---
+
+<header class="sticky top-0 z-50 glass" id="site-header">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="font-display text-xl font-bold tracking-tight text-text-primary group-hover:text-gold transition-colors">
+          card<span class="text-gold">.</span>oriz<span class="text-gold">.</span>in
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1">
+            Credit Cards
+            <svg class="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-56 bg-bg-secondary border border-border-default rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
+            <a href="/credit-cards" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">All Credit Cards</a>
+            <a href="/credit-cards/best/cashback" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Cashback</a>
+            <a href="/credit-cards/best/travel" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Travel</a>
+            <a href="/credit-cards/best/rewards" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Rewards</a>
+            <a href="/credit-cards/best/fuel" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Fuel</a>
+            <a href="/credit-cards/best/premium" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Premium</a>
+            <a href="/credit-cards/best/no-annual-fee" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">No Annual Fee</a>
+            <a href="/credit-cards/best/for-students" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">For Students</a>
+            <a href="/credit-cards/best/for-business" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">For Business</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1">
+            Debit Cards
+            <svg class="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-56 bg-bg-secondary border border-border-default rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
+            <a href="/debit-cards" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">All Debit Cards</a>
+            <a href="/debit-cards/best/cashback" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Cashback</a>
+            <a href="/debit-cards/best/international" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best International</a>
+            <a href="/debit-cards/best/premium" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Best Premium</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1">
+            Tools
+            <svg class="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-56 bg-bg-secondary border border-border-default rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
+            <a href="/card-genie" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Card Genie (AI) ✨</a>
+            <a href="/compare" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Compare Cards</a>
+            <a href="/calculators/credit-card-interest" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Interest Calculator</a>
+            <a href="/calculators/rewards-value" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Rewards Calculator</a>
+            <a href="/calculators/fuel-savings" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Fuel Savings Calculator</a>
+            <a href="/credit-score" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Check Credit Score</a>
+            <a href="/application-status" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Application Status</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1">
+            Learn
+            <svg class="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-56 bg-bg-secondary border border-border-default rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
+            <a href="/blog" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Blog</a>
+            <a href="/glossary" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Card Glossary</a>
+            <a href="/issuers" class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors">Card Issuers</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right side actions -->
+      <div class="flex items-center gap-2">
+        <SearchBar client:load />
+        <ThemeToggle client:load />
+        <button
+          id="sign-in-btn"
+          class="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-bg-primary bg-gold rounded-lg hover:bg-gold-2 transition-colors"
+        >
+          Sign In
+        </button>
+        <MobileNav client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  // Header glass effect on scroll
+  const header = document.getElementById("site-header");
+  if (header) {
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 10) {
+            header.classList.add("border-b", "border-border-default");
+          } else {
+            header.classList.remove("border-b", "border-border-default");
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+</script>
