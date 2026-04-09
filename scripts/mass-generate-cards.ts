@@ -20,8 +20,6 @@ interface CardTemplate {
 }
 
 function generateCreditCard(c: CardTemplate): string {
-  const exportName = c.filename.replace(/-/g, (m, i) => i === 0 ? "" : "") .split("-").map((w, i) => i === 0 ? w : w[0].toUpperCase() + w.slice(1)).join("");
-  // Better naming
   const parts = c.filename.split("-");
   const camelName = parts.map((w, i) => i === 0 ? w : w[0].toUpperCase() + w.slice(1)).join("");
   return `import type { CardData } from "@/types/card";

@@ -1,6 +1,6 @@
 import type { CardData } from '@/types/card';
 export const esafPrepaidPrepaidCard: CardData = {
-  id: 'esaf-prepaid-prepaid-card', name: 'ESAF Small Finance Bank Prepaid Prepaid Card', tagline: 'A prepaid prepaid card from ESAF Small Finance Bank', description: 'The ESAF Small Finance Bank Prepaid Prepaid Card offers rewards and convenience for daily transactions.', bank: 'ESAF Small Finance Bank', bankCode: 'esaf', network: 'Visa', cardType: 'prepaid', tier: 'Prepaid', variant: 'Prepaid', usage: 'Domestic', bin: '', material: 'Plastic', colorScheme: 'Blue gradient', virtualCardAvailable: true,
+  id: 'esaf-prepaid-prepaid-card', name: 'ESAF Small Finance Bank Prepaid Prepaid Card', tagline: 'A prepaid prepaid card from ESAF Small Finance Bank', description: 'The ESAF Small Finance Bank Prepaid Prepaid Card offers rewards and convenience for daily transactions.', bank: 'ESAF Small Finance Bank', bankCode: 'esaf', network: 'Visa', cardType: 'prepaid', tier: 'Classic', variant: 'Prepaid', usage: 'Domestic', bin: '', material: 'Plastic', colorScheme: 'Blue gradient', virtualCardAvailable: true,
   eligibility: { minAge: 18, maxAge: 65, existingAccountRequired: false, invitationOnly: false, notes: ['Available for all'] },
   charges: [{ label: 'Annual Fee', amount: 0, amountWithGst: 0 }],
   atmCharges: { ownBankFreePerMonth: 5, ownBankCharge: 20, otherBankFreePerMonth: 3, otherBankCharge: 20, internationalWithdrawalFee: 125, internationalWithdrawalPercent: 2.5, balanceEnquiryOwnBank: 0, balanceEnquiryOtherBank: 10, miniStatementOtherBank: 10 },
